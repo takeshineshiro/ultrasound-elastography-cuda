@@ -1,0 +1,8 @@
+//////////////////////////////////////////////////////////////////////////
+//
+
+#pragma once
+
+#include  <AccCtrl.h>
+
+char *  GetLastErrorText(char *pBuf, DWORD bufSize);          

@@ -1,0 +1,365 @@
+﻿Build started 2016/6/8 16:30:44.
+     1>Project "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\elasto_cuda_dll\elasto_cuda_dll.vcxproj" on node 2 (Rebuild target(s)).
+     1>CudaClean:
+         cmd.exe /C "C:\Users\wong\AppData\Local\Temp\tmp14e9a821be424888a5868cbf889ff3b6.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile   -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\cuda_main.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cuda_main.cu" -clean
+         
+         F:\elasto_cuda_dll_gpu\elasto_cuda_dll\elasto_cuda_dll>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile   -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\cuda_main.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cuda_main.cu" -clean 
+         cuda_main.cu
+       CudaClean:
+         cmd.exe /C "C:\Users\wong\AppData\Local\Temp\tmp4b20a691f92f41ff85bee3e4a46c56a7.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile   -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\devMatchCuda.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\devMatchCuda.cu" -clean
+         
+         F:\elasto_cuda_dll_gpu\elasto_cuda_dll\elasto_cuda_dll>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile   -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\devMatchCuda.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\devMatchCuda.cu" -clean 
+         devMatchCuda.cu
+       AddCudaCompileDeps:
+         D:\vs_2013\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /D_DEBUG /D_WINDOWS /DELASTO_CUDA_DLL_EXPORTS /D_WINDLL /D_MBCS /D_AFXDLL /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I. /FIcuda_runtime.h /c F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cuda_main.cu 
+       AddCudaCompileDeps:
+         D:\vs_2013\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /D_DEBUG /D_WINDOWS /DELASTO_CUDA_DLL_EXPORTS /D_WINDLL /D_MBCS /D_AFXDLL /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I. /FIcuda_runtime.h /c F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\devMatchCuda.cu 
+       CudaBuild:
+         Compiling CUDA source file ..\src\cuda_main.cu...
+         cmd.exe /C "C:\Users\wong\AppData\Local\Temp\tmp1371c854bf784055a8de3bdc00548eae.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\cuda_main.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cuda_main.cu"
+         
+         F:\elasto_cuda_dll_gpu\elasto_cuda_dll\elasto_cuda_dll>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\cuda_main.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cuda_main.cu" 
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(2657): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(3541): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(4492): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(5412): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(6320): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h(775): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h(1621): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_double_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.h(943): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\device_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\device_functions.h(775): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\device_functions.h(1621): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(2657): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(3541): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(4492): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(5412): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(6320): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>F:\opencv_2.4.9\build\include\opencv2/core/types_c.h(320): warning : variable "t" is used before its value is set
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(249): warning : parameter "max_location" was set but never used
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(253): warning : variable "min_loc_temp" was set but never used
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(324): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(326): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(503): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(532): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(559): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(590): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(592): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(620): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(945): warning : variable "maxLag" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(950): warning : variable "interpnum" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1207): warning : variable "maxLag" was declared but never referenced
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(2657): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(3541): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(4492): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(5412): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(6320): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(2657): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(3541): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(4492): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(5412): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(6320): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(910): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(1903): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(2843): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(3779): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(4721): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(5723): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(6682): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(7610): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(8543): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(9413): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(10391): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(11435): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h(775): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h(1621): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_double_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.h(943): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(2657): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(3541): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(4492): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(5412): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(6320): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h(775): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h(1621): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_double_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.h(943): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\device_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\device_functions.h(775): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\device_functions.h(1621): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(2657): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(3541): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(4492): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(5412): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(6320): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>F:\opencv_2.4.9\build\include\opencv2/core/types_c.h(320): warning : variable "t" is used before its value is set
+     1>f:\opencv_2.4.9\build\include\opencv2\flann\lsh_table.h(215): warning : statement is unreachable
+     1>f:\opencv_2.4.9\build\include\opencv2\flann\lsh_table.h(220): warning : statement is unreachable
+     1>f:\opencv_2.4.9\build\include\opencv2\flann\lsh_table.h(229): warning : statement is unreachable
+     1>f:\opencv_2.4.9\build\include\opencv2\flann\index_testing.h(248): warning : variable "p1" was set but never used
+     1>F:\opencv_2.4.9\build\include\opencv2/flann/flann.hpp(257): warning : missing return statement at end of non-void function "cv::flann::Index_<T>::veclen"
+     1>F:\opencv_2.4.9\build\include\opencv2/flann/flann.hpp(263): warning : missing return statement at end of non-void function "cv::flann::Index_<T>::size"
+     1>F:\opencv_2.4.9\build\include\opencv2/flann/flann.hpp(270): warning : missing return statement at end of non-void function "cv::flann::Index_<T>::getParameters"
+     1>F:\opencv_2.4.9\build\include\opencv2/flann/flann.hpp(276): warning : missing return statement at end of non-void function "cv::flann::Index_<T>::getIndexParameters"
+     1>F:\opencv_2.4.9\build\include\opencv2/flann/flann.hpp(362): warning : missing return statement at end of non-void function "cv::flann::Index_<T>::radiusSearch(const std::vector<cv::flann::Index_<T>::ElementType, std::allocator<cv::flann::Index_<T>::ElementType>> &, std::vector<int, std::allocator<int>> &, std::vector<cv::flann::Index_<T>::DistanceType, std::allocator<cv::flann::Index_<T>::DistanceType>> &, cv::flann::Index_<T>::DistanceType, const cvflann::SearchParams &)"
+     1>F:\opencv_2.4.9\build\include\opencv2/flann/flann.hpp(381): warning : missing return statement at end of non-void function "cv::flann::Index_<T>::radiusSearch(const cv::Mat &, cv::Mat &, cv::Mat &, cv::flann::Index_<T>::DistanceType, const cvflann::SearchParams &)"
+     1>F:\opencv_2.4.9\build\include\opencv2/flann/flann.hpp(421): warning : missing return statement at end of non-void function "cv::flann::hierarchicalClustering<ELEM_TYPE,DIST_TYPE>(const cv::Mat &, cv::Mat &, const cvflann::KMeansIndexParams &)"
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(249): warning : parameter "max_location" was set but never used
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(253): warning : variable "min_loc_temp" was set but never used
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(324): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(326): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(503): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(532): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(559): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(590): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(592): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(620): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(945): warning : variable "maxLag" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(950): warning : variable "interpnum" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1207): warning : variable "maxLag" was declared but never referenced
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(2657): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(3541): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(4492): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(5412): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(6320): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+         cuda_main.cu
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(954): warning C4018: '>' : signed/unsigned mismatch
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(959): warning C4018: '>' : signed/unsigned mismatch
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(964): warning C4018: '>' : signed/unsigned mismatch
+       CudaBuild:
+         Compiling CUDA source file ..\src\devMatchCuda.cu...
+         cmd.exe /C "C:\Users\wong\AppData\Local\Temp\tmpfdd449f5c01a40a0b8fc0dacb1b7ef4d.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\devMatchCuda.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\devMatchCuda.cu"
+         
+         F:\elasto_cuda_dll_gpu\elasto_cuda_dll\elasto_cuda_dll>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\devMatchCuda.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\devMatchCuda.cu" 
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(2657): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(3541): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(4492): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(5412): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(6320): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h(775): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h(1621): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_double_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.h(943): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/devMatchCuda.cu(6): warning : dllexport/dllimport conflict with "initCUDA"
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(2657): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(3541): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(4492): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(5412): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(6320): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(2657): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(3541): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(4492): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(5412): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(6320): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(910): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(1903): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(2843): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(3779): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(4721): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(5723): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(6682): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(7610): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(8543): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(9413): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(10391): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions_decls.h(11435): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h(775): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h(1621): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_double_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.h(943): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(2657): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(3541): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(4492): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(5412): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(6320): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h(775): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h(1621): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_double_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.h(943): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/devMatchCuda.cu(6): warning : dllexport/dllimport conflict with "initCUDA"
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(2657): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(3541): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(4492): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(5412): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(6320): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+         devMatchCuda.cu
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/devMatchCuda.cu(7): warning C4273: 'initCUDA' : inconsistent dll linkage
+                 f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\devMatchCuda.cuh(29) : see previous definition of 'initCUDA'
+       ClCompile:
+         D:\vs_2013\VC\bin\CL.exe /c /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D ELASTO_CUDA_DLL_EXPORTS /D _WINDLL /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\elasto_cuda_dll.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+     1>d:\vs_2013\vc\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+                 d:\vs_2013\vc\atlmfc\include\afx.h(33) : see declaration of 'MBCS_Support_Deprecated_In_MFC'
+         D:\vs_2013\VC\bin\CL.exe /c /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D ELASTO_CUDA_DLL_EXPORTS /D _WINDLL /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\cuda_main.cuh ..\src\devMatchCuda.cuh
+         devMatchCuda.cuh
+         cuda_main.cuh
+         Generating Code...
+         D:\vs_2013\VC\bin\CL.exe /c /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D ELASTO_CUDA_DLL_EXPORTS /D _WINDLL /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\elasto_cuda_dll.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\CData.cpp ..\src\CDataProcess.cpp ..\src\CDisplacement.cpp ..\src\CElasto.cpp ..\src\CFilter.cpp ..\src\CStrain.cpp ..\src\ElastoDll.cpp ..\src\elasto_cuda.cpp ..\src\ErrorText.cpp ..\src\FileUtility.cpp ..\src\ImageFunc.cpp ..\src\Log.cpp ..\src\SysConfig.cpp ..\src\TestTime.cpp
+         TestTime.cpp
+         SysConfig.cpp
+         Log.cpp
+         ImageFunc.cpp
+     1>f:\opencv_2.4.9\build\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\imagefunc.cpp(78): warning C4244: '=' : conversion from 'double' to 'uchar', possible loss of data
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\imagefunc.cpp(179): warning C4244: '=' : conversion from 'double' to 'uchar', possible loss of data
+         FileUtility.cpp
+     1>f:\opencv_2.4.9\build\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\fileutility.cpp(17): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\fileutility.cpp(30): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\fileutility.cpp(45): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\fileutility.cpp(58): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\fileutility.cpp(74): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\fileutility.cpp(104): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+         ErrorText.cpp
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\errortext.cpp(43): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(356) : see declaration of 'sprintf'
+         elasto_cuda.cpp
+     1>f:\opencv_2.4.9\build\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+         ElastoDll.cpp
+         CStrain.cpp
+     1>f:\opencv_2.4.9\build\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cstrain.cpp(469): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cstrain.cpp(538): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cstrain.cpp(541): warning C4018: '<' : signed/unsigned mismatch
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cstrain.cpp(678): warning C4018: '<' : signed/unsigned mismatch
+         CFilter.cpp
+     1>f:\opencv_2.4.9\build\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+         CElasto.cpp
+     1>f:\opencv_2.4.9\build\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\celasto.cpp(119): warning C4305: '=' : truncation from 'double' to 'float'
+         CDisplacement.cpp
+     1>f:\opencv_2.4.9\build\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cdisplacement.cpp(820): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         CDataProcess.cpp
+     1>f:\opencv_2.4.9\build\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+         CData.cpp
+     1>f:\opencv_2.4.9\build\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+         Generating Code...
+         D:\vs_2013\VC\bin\CL.exe /c /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D ELASTO_CUDA_DLL_EXPORTS /D _WINDLL /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt dllmain.cpp
+         dllmain.cpp
+     1>d:\vs_2013\vc\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+                 d:\vs_2013\vc\atlmfc\include\afx.h(33) : see declaration of 'MBCS_Support_Deprecated_In_MFC'
+       Link:
+         D:\vs_2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\elasto_cuda_dll_gpu\elasto_cuda_dll\Debug\elasto_cuda_dll.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\Win32" opencv_ml249d.lib opencv_calib3d249d.lib opencv_contrib249d.lib opencv_core249d.lib opencv_features2d249d.lib cublas.lib cublas_device.lib cuda.lib cudadevrt.lib cudart.lib cudart_static.lib cufft.lib cufftw.lib curand.lib cusolver.lib cusparse.lib nppc.lib nppi.lib npps.lib nvblas.lib nvcuvid.lib nvrtc.lib OpenCL.lib opencv_flann249d.lib opencv_gpu249d.lib opencv_highgui249d.lib opencv_imgproc249d.lib opencv_legacy249d.lib opencv_objdetect249d.lib opencv_ts249d.lib opencv_video249d.lib opencv_nonfree249d.lib opencv_ocl249d.lib opencv_photo249d.lib opencv_stitching249d.lib opencv_superres249d.lib opencv_videostab249d.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:D:\vs_2013\VC\Include\Manifest\dpiaware.manifest /DEBUG /PDB:"F:\elasto_cuda_dll_gpu\elasto_cuda_dll\Debug\elasto_cuda_dll.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\elasto_cuda_dll_gpu\elasto_cuda_dll\Debug\elasto_cuda_dll.lib" /MACHINE:X86 /DLL Debug\cuda_main.cu.obj
+         Debug\devMatchCuda.cu.obj
+         Debug\cuda_main.obj
+         Debug\devMatchCuda.obj
+         Debug\CData.obj
+         Debug\CDataProcess.obj
+         Debug\CDisplacement.obj
+         Debug\CElasto.obj
+         Debug\CFilter.obj
+         Debug\CStrain.obj
+         Debug\ElastoDll.obj
+         Debug\elasto_cuda.obj
+         Debug\ErrorText.obj
+         Debug\FileUtility.obj
+         Debug\ImageFunc.obj
+         Debug\Log.obj
+         Debug\SysConfig.obj
+         Debug\TestTime.obj
+         Debug\dllmain.obj
+         Debug\stdafx.obj
+     1>cuda_main.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+            Creating library F:\elasto_cuda_dll_gpu\elasto_cuda_dll\Debug\elasto_cuda_dll.lib and object F:\elasto_cuda_dll_gpu\elasto_cuda_dll\Debug\elasto_cuda_dll.exp
+         elasto_cuda_dll.vcxproj -> F:\elasto_cuda_dll_gpu\elasto_cuda_dll\Debug\elasto_cuda_dll.dll
+     1>Done Building Project "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\elasto_cuda_dll\elasto_cuda_dll.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:31.56

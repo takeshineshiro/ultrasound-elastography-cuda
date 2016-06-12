@@ -1,0 +1,25 @@
+﻿Build started 2016/6/8 16:31:53.
+     1>Project "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\test_elasto_cuda_dll\test_elasto_cuda_dll.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         D:\vs_2013\VC\bin\CL.exe /c /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\test_elasto_cuda_dll.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\vs_2013\VC\bin\CL.exe /c /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\test_elasto_cuda_dll.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt test_elasto_cuda_dll.cpp
+         test_elasto_cuda_dll.cpp
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\test_elasto_cuda_dll\test_elasto_cuda_dll.cpp(19): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\test_elasto_cuda_dll\test_elasto_cuda_dll.cpp(32): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(230) : see declaration of 'fscanf'
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\test_elasto_cuda_dll\test_elasto_cuda_dll.cpp(34): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>f:\elasto_cuda_dll_gpu\elasto_cuda_dll\test_elasto_cuda_dll\test_elasto_cuda_dll.cpp(48): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\vs_2013\vc\include\stdio.h(211) : see declaration of 'fopen'
+       Link:
+         D:\vs_2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\elasto_cuda_dll_gpu\elasto_cuda_dll\Debug\test_elasto_cuda_dll.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:F:\elasto_cuda_dll_gpu\elasto_cuda_dll\lib /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\lib\Win32" elasto_cuda_dll.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:\elasto_cuda_dll_gpu\elasto_cuda_dll\Debug\test_elasto_cuda_dll.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\elasto_cuda_dll_gpu\elasto_cuda_dll\Debug\test_elasto_cuda_dll.lib" /MACHINE:X86 Debug\stdafx.obj
+         Debug\test_elasto_cuda_dll.obj
+     1>stdafx.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+            Creating library F:\elasto_cuda_dll_gpu\elasto_cuda_dll\Debug\test_elasto_cuda_dll.lib and object F:\elasto_cuda_dll_gpu\elasto_cuda_dll\Debug\test_elasto_cuda_dll.exp
+         test_elasto_cuda_dll.vcxproj -> F:\elasto_cuda_dll_gpu\elasto_cuda_dll\Debug\test_elasto_cuda_dll.exe
+     1>Done Building Project "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\test_elasto_cuda_dll\test_elasto_cuda_dll.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.77

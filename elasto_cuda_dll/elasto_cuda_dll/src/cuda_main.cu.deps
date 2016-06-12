@@ -1,0 +1,563 @@
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\cuda_runtime.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_config.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\sal.h
+D:\vs_2013\VC\include\ConcurrencySal.h
+D:\vs_2013\VC\include\vadefs.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+D:\vs_2013\VC\include\limits.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\stddef.h
+D:\vs_2013\VC\include\crtdefs.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\channel_descriptor.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\cuda_runtime_api.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\cuda_device_runtime_api.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\cuda_runtime_api.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_functions.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\common_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+D:\vs_2013\VC\include\string.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\time.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\wtime.inl
+D:\vs_2013\VC\include\time.inl
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+D:\vs_2013\VC\include\math.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\stdlib.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\cmath
+D:\vs_2013\VC\include\yvals.h
+D:\vs_2013\VC\include\xkeycheck.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\use_ansi.h
+D:\vs_2013\VC\include\math.h
+D:\vs_2013\VC\include\xtgmath.h
+D:\vs_2013\VC\include\xtr1common
+D:\vs_2013\VC\include\cstdlib
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions_dbl_ptx3.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions_dbl_ptx3.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\cuda_surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\channel_descriptor.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\cuda_texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\channel_descriptor.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_functions.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_atomic_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_atomic_functions.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_double_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_double_functions.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_atomic_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_atomic_functions.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_32_atomic_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_32_atomic_functions.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_35_atomic_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_32_atomic_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_20_intrinsics.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_30_intrinsics.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_30_intrinsics.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_32_intrinsics.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_32_intrinsics.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_35_intrinsics.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\sm_32_intrinsics.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\cuda_surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_functions.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\cuda_surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_fetch_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\cuda_texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_fetch_functions.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\cuda_texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_indirect_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_indirect_functions.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_indirect_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_indirect_functions.hpp
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\builtin_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\driver_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\surface_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\texture_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\host_defines.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_functions.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\device_launch_parameters.h
+c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\vector_types.h
+f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cuda_main.cuh
+F:\opencv_2.4.9\build\include\opencv\cxcore.h
+F:\opencv_2.4.9\build\include\opencv2/core/core_c.h
+F:\opencv_2.4.9\build\include\opencv2/core/types_c.h
+D:\vs_2013\VC\include\assert.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\float.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\crtwrn.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\math.h
+D:\vs_2013\VC\include\emmintrin.h
+D:\vs_2013\VC\include\xmmintrin.h
+D:\vs_2013\VC\include\mmintrin.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\malloc.h
+D:\vs_2013\VC\include\crtdefs.h
+F:\opencv_2.4.9\build\include\opencv2/core/core.hpp
+F:\opencv_2.4.9\build\include\opencv2/core/version.hpp
+D:\vs_2013\VC\include\algorithm
+D:\vs_2013\VC\include\xmemory
+D:\vs_2013\VC\include\xmemory0
+D:\vs_2013\VC\include\limits
+D:\vs_2013\VC\include\ymath.h
+D:\vs_2013\VC\include\cfloat
+D:\vs_2013\VC\include\climits
+D:\vs_2013\VC\include\cwchar
+D:\vs_2013\VC\include\wchar.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\swprintf.inl
+D:\vs_2013\VC\include\xstddef
+D:\vs_2013\VC\include\cstddef
+D:\vs_2013\VC\include\initializer_list
+D:\vs_2013\VC\include\new
+D:\vs_2013\VC\include\exception
+D:\vs_2013\VC\include\eh.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\xutility
+D:\vs_2013\VC\include\utility
+D:\vs_2013\VC\include\iosfwd
+D:\vs_2013\VC\include\cstdio
+D:\vs_2013\VC\include\stdio.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\cstring
+D:\vs_2013\VC\include\crtdbg.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\type_traits
+D:\vs_2013\VC\include\xrefwrap
+D:\vs_2013\VC\include\xatomic0.h
+D:\vs_2013\VC\include\intrin.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\setjmp.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\immintrin.h
+D:\vs_2013\VC\include\wmmintrin.h
+D:\vs_2013\VC\include\nmmintrin.h
+D:\vs_2013\VC\include\smmintrin.h
+D:\vs_2013\VC\include\tmmintrin.h
+D:\vs_2013\VC\include\pmmintrin.h
+D:\vs_2013\VC\include\ammintrin.h
+D:\vs_2013\VC\include\mm3dnow.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\complex
+D:\vs_2013\VC\include\ccomplex
+D:\vs_2013\VC\include\sstream
+D:\vs_2013\VC\include\string
+D:\vs_2013\VC\include\iterator
+D:\vs_2013\VC\include\istream
+D:\vs_2013\VC\include\ostream
+D:\vs_2013\VC\include\ios
+D:\vs_2013\VC\include\xlocnum
+D:\vs_2013\VC\include\streambuf
+D:\vs_2013\VC\include\xiosbase
+D:\vs_2013\VC\include\xlocale
+D:\vs_2013\VC\include\stdexcept
+D:\vs_2013\VC\include\xstring
+D:\vs_2013\VC\include\typeinfo
+D:\vs_2013\VC\include\xlocinfo
+D:\vs_2013\VC\include\xlocinfo.h
+D:\vs_2013\VC\include\ctype.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\locale.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\xdebug
+D:\vs_2013\VC\include\xfacet
+D:\vs_2013\VC\include\system_error
+D:\vs_2013\VC\include\cerrno
+D:\vs_2013\VC\include\errno.h
+D:\vs_2013\VC\include\crtdefs.h
+D:\vs_2013\VC\include\share.h
+D:\vs_2013\VC\include\xcomplex
+D:\vs_2013\VC\include\map
+D:\vs_2013\VC\include\xtree
+D:\vs_2013\VC\include\tuple
+D:\vs_2013\VC\include\vector
+F:\opencv_2.4.9\build\include\opencv2/core/operations.hpp
+F:\opencv_2.4.9\build\include\opencv2/core/mat.hpp
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\cuda_runtime.h
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\device_launch_parameters.h
+f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\SysConfig.h
+f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\CElasto.h
+D:\vs_2013\VC\include\iostream
+f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\FileUtility.h
+F:\opencv_2.4.9\build\include\opencv/cv.h
+F:\opencv_2.4.9\build\include\opencv2/imgproc/imgproc_c.h
+F:\opencv_2.4.9\build\include\opencv2/imgproc/types_c.h
+F:\opencv_2.4.9\build\include\opencv2/imgproc/imgproc.hpp
+F:\opencv_2.4.9\build\include\opencv2/video/tracking.hpp
+F:\opencv_2.4.9\build\include\opencv2/features2d/features2d.hpp
+F:\opencv_2.4.9\build\include\opencv2/flann/miniflann.hpp
+F:\opencv_2.4.9\build\include\opencv2/flann/defines.h
+f:\opencv_2.4.9\build\include\opencv2\flann\config.h
+F:\opencv_2.4.9\build\include\opencv2/flann/flann.hpp
+F:\opencv_2.4.9\build\include\opencv2/flann/flann_base.hpp
+D:\vs_2013\VC\include\cassert
+D:\vs_2013\VC\include\assert.h
+D:\vs_2013\VC\include\crtdefs.h
+f:\opencv_2.4.9\build\include\opencv2\flann\general.h
+D:\vs_2013\VC\include\cassert
+D:\vs_2013\VC\include\assert.h
+D:\vs_2013\VC\include\crtdefs.h
+f:\opencv_2.4.9\build\include\opencv2\flann\matrix.h
+f:\opencv_2.4.9\build\include\opencv2\flann\params.h
+f:\opencv_2.4.9\build\include\opencv2\flann\any.h
+f:\opencv_2.4.9\build\include\opencv2\flann\saving.h
+f:\opencv_2.4.9\build\include\opencv2\flann\nn_index.h
+f:\opencv_2.4.9\build\include\opencv2\flann\result_set.h
+D:\vs_2013\VC\include\set
+f:\opencv_2.4.9\build\include\opencv2\flann\all_indices.h
+f:\opencv_2.4.9\build\include\opencv2\flann\kdtree_index.h
+D:\vs_2013\VC\include\cassert
+D:\vs_2013\VC\include\assert.h
+D:\vs_2013\VC\include\crtdefs.h
+f:\opencv_2.4.9\build\include\opencv2\flann\dynamic_bitset.h
+f:\opencv_2.4.9\build\include\opencv2\flann\dist.h
+f:\opencv_2.4.9\build\include\opencv2\flann\heap.h
+f:\opencv_2.4.9\build\include\opencv2\flann\allocator.h
+f:\opencv_2.4.9\build\include\opencv2\flann\random.h
+f:\opencv_2.4.9\build\include\opencv2\flann\kdtree_single_index.h
+D:\vs_2013\VC\include\cassert
+D:\vs_2013\VC\include\assert.h
+D:\vs_2013\VC\include\crtdefs.h
+f:\opencv_2.4.9\build\include\opencv2\flann\kmeans_index.h
+D:\vs_2013\VC\include\cassert
+D:\vs_2013\VC\include\assert.h
+D:\vs_2013\VC\include\crtdefs.h
+f:\opencv_2.4.9\build\include\opencv2\flann\logger.h
+D:\vs_2013\VC\include\stdarg.h
+D:\vs_2013\VC\include\crtdefs.h
+f:\opencv_2.4.9\build\include\opencv2\flann\composite_index.h
+f:\opencv_2.4.9\build\include\opencv2\flann\linear_index.h
+f:\opencv_2.4.9\build\include\opencv2\flann\hierarchical_clustering_index.h
+D:\vs_2013\VC\include\cassert
+D:\vs_2013\VC\include\assert.h
+D:\vs_2013\VC\include\crtdefs.h
+f:\opencv_2.4.9\build\include\opencv2\flann\lsh_index.h
+D:\vs_2013\VC\include\cassert
+D:\vs_2013\VC\include\assert.h
+D:\vs_2013\VC\include\crtdefs.h
+f:\opencv_2.4.9\build\include\opencv2\flann\lsh_table.h
+D:\vs_2013\VC\include\iomanip
+D:\vs_2013\VC\include\xlocmon
+D:\vs_2013\VC\include\xloctime
+D:\vs_2013\VC\include\ctime
+D:\vs_2013\VC\include\math.h
+f:\opencv_2.4.9\build\include\opencv2\flann\autotuned_index.h
+f:\opencv_2.4.9\build\include\opencv2\flann\ground_truth.h
+f:\opencv_2.4.9\build\include\opencv2\flann\index_testing.h
+D:\vs_2013\VC\include\cassert
+D:\vs_2013\VC\include\assert.h
+D:\vs_2013\VC\include\crtdefs.h
+f:\opencv_2.4.9\build\include\opencv2\flann\timer.h
+f:\opencv_2.4.9\build\include\opencv2\flann\sampling.h
+F:\opencv_2.4.9\build\include\opencv2/calib3d/calib3d.hpp
+F:\opencv_2.4.9\build\include\opencv2/objdetect/objdetect.hpp
+D:\vs_2013\VC\include\deque
+F:\opencv_2.4.9\build\include\opencv2/legacy/compat.hpp
+D:\vs_2013\VC\include\math.h
+F:\opencv_2.4.9\build\include\opencv2/core/internal.hpp
+D:\vs_2013\VC\include\fstream
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\device_launch_parameters.h
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\device_functions.h
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h

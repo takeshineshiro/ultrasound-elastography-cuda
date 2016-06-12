@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "elasto_cuda_dll", "elasto_cuda_dll\elasto_cuda_dll.vcxproj", "{C3A625C8-4B3E-4A6F-81F7-A365D7C79456}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_elasto_cuda_dll", "test_elasto_cuda_dll\test_elasto_cuda_dll.vcxproj", "{33AE26F2-546E-45B3-8EF5-DC4862F2D2AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3A625C8-4B3E-4A6F-81F7-A365D7C79456}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C3A625C8-4B3E-4A6F-81F7-A365D7C79456}.Debug|Win32.Build.0 = Debug|Win32
+		{C3A625C8-4B3E-4A6F-81F7-A365D7C79456}.Release|Win32.ActiveCfg = Release|Win32
+		{C3A625C8-4B3E-4A6F-81F7-A365D7C79456}.Release|Win32.Build.0 = Release|Win32
+		{33AE26F2-546E-45B3-8EF5-DC4862F2D2AA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{33AE26F2-546E-45B3-8EF5-DC4862F2D2AA}.Debug|Win32.Build.0 = Debug|Win32
+		{33AE26F2-546E-45B3-8EF5-DC4862F2D2AA}.Release|Win32.ActiveCfg = Release|Win32
+		{33AE26F2-546E-45B3-8EF5-DC4862F2D2AA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
