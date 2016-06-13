@@ -175,6 +175,12 @@ private:                                                                       /
  virtual	CvMat* bandpassFilt_cuda(CvMat* rawMat);                      //计算零相移滤波（带通），输出矩阵为了便于画图，保存，比较结果
 
 
+
+
+ virtual    CvMat* bandpassFilt_1024_cuda(CvMat* rawMat);               //计算零相移滤波（带通）1024线程，输出矩阵为了便于画图，保存，比较结果       
+
+
+
  virtual    void   zeroFilter_cuda(CvMat* rawMat,Complex*filterOutput);   //计算零相移滤波（带通或低通）,输出保留在GPU中
 
 

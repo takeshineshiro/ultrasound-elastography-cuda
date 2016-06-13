@@ -92,6 +92,107 @@ __global__ void Bandpass_front_1(Complex* tInput, int iWidth, float* param, int 
 
 
 
+
+//worker for  zero-phase filter  ,1024  threads  limited   .   changed   by  wong   2016/06/12
+
+//test  result  : ok        wong    2016/06/13  
+
+__global__ void Bandpass_front_1024(Complex* tInput, int iWidth, float* param, int iParaLen, Complex* tOutPut)     {
+
+	 float data_sum;
+
+	 float data_1;
+
+	 data_sum = 0.0;
+
+	 int   line_serial;
+
+	 int    bid = blockIdx.x;
+
+
+	   line_serial = bid / 8;
+
+
+
+	 int  line_mod = bid % 8;
+
+
+
+	 if ((0 == line_mod))    {                                                                     //初试线                  
+
+		 if ((threadIdx.x <= iParaLen - 1))                                                       //数据数目小于等于抽头数目,并且是初试线
+		 {
+
+			 for (int i = 0; i <= threadIdx.x; i++)
+			 {
+
+
+				 data_1 = *(tInput + line_serial * iWidth + threadIdx.x - i);                  //b(0)*x(n-0)+b(1)*x(n-1)+...+b(n)*x(0)   
+
+				 data_sum += (data_1*param[i]);
+
+			 }
+
+
+			 data_1 = *(tInput + line_serial * iWidth);                                      // x(0)
+
+
+			 for (int j = threadIdx.x + 1; j <= iParaLen - 1; j++)
+			 {
+				 data_sum += (data_1*param[j]);                                                    //b(n+1)*x(0)+...+b(nb-2)*x(0)
+			 }
+
+			 *(tOutPut + line_serial * iWidth + threadIdx.x) = data_sum;
+
+
+
+		 }
+
+		 else  if ((threadIdx.x > iParaLen - 1))   {                                               //数据数目大于等于抽头数目,并且是初试线
+
+			 //data_1 = (tInput + blockIdx.x*iWidth + blockIdx.y - threadIdx.x)->x;
+			 for (int i = 0; i <= iParaLen - 1; i++)
+			 {
+
+				 data_1 = *(tInput + line_serial *iWidth + threadIdx.x - i);                 //b(0)*x(n-0)+b(1)*x(n-1)+...+b(nb-2)*x(n-(nb-2))  
+
+				 data_sum += (data_1*param[i]);
+
+			 }
+
+			 *(tOutPut + line_serial * iWidth + threadIdx.x) = data_sum;
+
+
+		 }
+
+
+	 }
+
+	else                                                                                 //非初试线 (默认数据数目大于等于抽头数目)        
+	{
+
+		for (int i = 0; i <= iParaLen - 1; i++)
+		{
+
+			data_1    = *(tInput + blockIdx.x*blockDim.x+ threadIdx.x - i);   //b(0)*x(n-0)+b(1)*x(n-1)+...+b(nb-2)*x(n-(nb-2))  
+
+			data_sum += (data_1*param[i]);
+
+		}
+
+		*(tOutPut + blockIdx.x*blockDim.x + threadIdx.x) = data_sum;
+
+	}
+
+
+
+}
+
+
+
+
+//需要更改，该款GPU芯片只能支持1024个threads per  block !!!      changed  by  wong   2016/06/08
+
 //零相移数字滤波器   逆滤波                          changed  by  wong     2016/5/13
 __global__ void Bandpass_back_1(Complex* tInput, int iWidth, float* param, int iParaLen, Complex* tOutPut)
 {
@@ -161,6 +262,133 @@ __global__ void Bandpass_back_1(Complex* tInput, int iWidth, float* param, int i
 
 
 }
+
+
+
+
+//  worker for  zero-phase filter  ,1024  threads  limited   .   changed   by  wong   2016/06/12
+
+//  test  result  : ok        wong    2016/06/13   
+
+__global__ void Bandpass_back_1024(Complex* tInput, int iWidth, float* param, int iParaLen, Complex* tOutPut)   {
+
+
+	float  data_1;
+
+	float  data_sum;
+
+	data_sum = 0.0;
+
+
+	int   line_serial;
+
+	int    bid = blockIdx.x;
+
+
+	line_serial = bid / 8;
+
+
+
+	int  line_mod = bid % 8;
+
+
+	if ((0 == line_mod))    {                                                                     // 初试线   
+
+
+		if (threadIdx.x <= iParaLen - 1)   {                                                      // 数据长度小于等于滤波器抽头长度,并且是初试线
+
+
+			for (int i = 0; i <= threadIdx.x; i++)
+			{
+
+				 
+				data_1 = *(tInput + line_serial*iWidth + iWidth - 1 - threadIdx.x + i);      // 反向输入
+
+				data_sum += (data_1*param[i]);
+
+			}
+
+
+			data_1 = *(tInput + line_serial * iWidth + iWidth - 1);                          // x(N-1) 
+
+
+			for (int j = threadIdx.x + 1; j <= iParaLen - 1; j++)
+			{
+
+				data_sum += (data_1*param[j]);                                                   // b(n+1)*x(N-1)+...+b(nb-1)*x(N-1) 
+
+			}
+
+
+			*(tOutPut + line_serial * iWidth + iWidth-1 - threadIdx.x) = data_sum;              // y(n)      
+
+		}
+
+		else  if (threadIdx.x  >iParaLen - 1)   {                                              // 数据长度大于滤波器抽头长度,并且是初试线         
+
+
+			for (int i = 0; i <= iParaLen - 1; i++)
+			{
+				data_1 = *(tInput + line_serial*iWidth + iWidth - 1 - threadIdx.x + i);
+
+				data_sum += (data_1*param[i]);                                               //  y(N-1-n) = b(0)*x(N-1-n+0) +b(1)*x(N-1-n+1)+...+b(nb-1)*x(N-1-n+nb-1)
+
+			}
+
+			*(tOutPut + line_serial * iWidth + iWidth - 1 - threadIdx.x) = data_sum;
+
+
+
+
+		}
+
+
+
+	}  
+
+	else  {                                                                                 //  非初试线 (默认数据数目大于等于抽头数目)    
+
+
+
+
+		for (int i = 0; i <= iParaLen - 1; i++)
+		{
+			data_1 = *(tInput + line_serial*iWidth + iWidth - 1 - (threadIdx.x + blockIdx.x*blockDim.x) + i);
+
+			data_sum += (data_1*param[i]);                                               //  y(N-1-n) = b(0)*x(N-1-n+0) +b(1)*x(N-1-n+1)+...+b(nb-1)*x(N-1-n+nb-1)
+
+		}
+
+		*(tOutPut + line_serial * iWidth + iWidth - 1 - (threadIdx.x + blockIdx.x*blockDim.x)) = data_sum;
+
+
+
+
+	}
+	
+	
+	
+	
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //changed   by  wong      2016/5/13
@@ -1284,7 +1512,7 @@ void   CudaMain::freeMats() {
 
 
 
-
+//this   threads  number  of  this   module    is  8192  .not  suitable  for   this   GTX560 TI  GPU  platform  
 
 CvMat*  CudaMain::bandpassFilt_cuda(CvMat* rawMat)  {
 
@@ -1341,6 +1569,71 @@ CvMat*  CudaMain::bandpassFilt_cuda(CvMat* rawMat)  {
 
 
 }
+
+
+
+//worker  for  this   platform   ,1024   threads   limited .  change   by  wong     2016/6/12
+
+CvMat*  CudaMain::bandpassFilt_1024_cuda(CvMat* rawMat)  {
+
+
+	Complex* h_MatData = (Complex*)rawMat->data.fl;
+
+	cudaMemsetAsync(frontFilterMat, 0, sizeof(Complex)*rawMat->cols*rawMat->rows);
+
+	cudaMemcpyAsync(zeroFilterMat, h_MatData, sizeof(Complex)*rawMat->cols*rawMat->rows, cudaMemcpyHostToDevice);    //拷贝CPU中RF数据到GPU
+
+	int steps = cpu_bandfilterParam.size();
+
+	cudaMemcpyAsync(bandfilterParam, &cpu_bandfilterParam[0], sizeof(float)*steps, cudaMemcpyHostToDevice);                  //拷贝CPU中抽头数据到GPU 
+
+
+	dim3 blockID, threadID;
+
+	blockID.x = rawMat->rows*8;
+
+	threadID.x = rawMat->cols/8;
+
+	cudaThreadSynchronize();
+
+	Bandpass_front_1024 << <blockID, threadID >> >(zeroFilterMat, rawMat->cols, bandfilterParam, steps, frontFilterMat);
+
+	cudaThreadSynchronize();
+
+
+	cudaMemcpy(zeroFilterMat, frontFilterMat, sizeof(Complex)*rawMat->cols*rawMat->rows, cudaMemcpyDeviceToDevice);
+
+
+	Bandpass_back_1024 << <blockID, threadID >> >(zeroFilterMat, rawMat->cols, bandfilterParam, steps, frontFilterMat);
+
+
+	cudaThreadSynchronize();
+
+
+	cudaFree(bandfilterParam);
+
+	cudaMemcpy(h_MatData, frontFilterMat, sizeof(Complex)*rawMat->cols*rawMat->rows, cudaMemcpyDeviceToHost);   //拷贝GPU处理后数据到	CPU
+
+	cudaFree(zeroFilterMat);
+
+	cudaFree(frontFilterMat);
+
+
+	SaveDataFile("bpfilt_1024.dat", rawMat);
+
+
+	return rawMat;
+ 
+
+
+
+
+
+
+}
+
+
+
 
 
 
@@ -1621,7 +1914,7 @@ void  CudaMain::process(const EInput &input, EOutput& output) {
 
 
 
-	   bandpassFilt_cuda(cpu_inputMat);                                                          //    带通滤波       
+	   bandpassFilt_1024_cuda(cpu_inputMat);                                                          //    带通滤波       
 
 
 	   int  multiWin    = 2;
