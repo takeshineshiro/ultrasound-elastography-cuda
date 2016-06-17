@@ -30,9 +30,56 @@ typedef float Complex;
 
 
 
+typedef   struct    templateData  {
+
+	Complex  elem[64];
+
+	Complex  atom[36];
+
+
+}  templateData ;
+
+
+
+typedef   struct    objectData  {
+
+	Complex  elem_0[64];
+
+	Complex  elem_1[64];
+
+	Complex  elem_2[64];
+
+	Complex  atom[8];
+
+
+} objectData ;
+
+
+
+
+typedef   struct     resultData  {
+
+	Complex  elem[64];
+
+	Complex  atom[37];
+
+
+
+} resultData;
+
+
+
+
+
 typedef  struct  templateMat{
 
-	Complex  elem[100];
+//	Complex  elem[64];
+
+//	Complex  atom[36];
+
+
+	templateData  tempData;
+
 
 
 }  templateMat;                                         //changed   by   wong    2016/5/19
@@ -42,7 +89,15 @@ typedef  struct  templateMat{
 
 typedef  struct  objectMat{
 
-	Complex  elem[200];
+ //	Complex  elem_0[64];
+
+//	Complex  elem_1[64];
+
+//	Complex  elem_2[64];
+
+//	Complex  atom[8];
+
+ objectData    objData;
 
 
 }  objectMat;                                            //changed   by   wong    2016/5/19
@@ -51,7 +106,12 @@ typedef  struct  objectMat{
 
 typedef  struct resultMat{
 
-	Complex  elem[101];
+	Complex  elem[64];
+
+	Complex  atom[37];
+
+
+	
 
 
 }  resultMat;                                         //changed   by   wong    2016/5/19

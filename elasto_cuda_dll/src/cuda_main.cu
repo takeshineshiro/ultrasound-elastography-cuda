@@ -117,6 +117,13 @@ __global__ void Bandpass_front_1024(Complex* tInput, int iWidth, float* param, i
 	 int  line_mod = bid % 8;
 
 
+//	 line_serial  = bid / 16;                            //changed   by wong 
+
+
+//	 int  line_mod = bid % 16;                         //changed  by  wong 
+
+
+
 
 	 if ((0 == line_mod))    {                                                                     //初试线                  
 
@@ -184,6 +191,8 @@ __global__ void Bandpass_front_1024(Complex* tInput, int iWidth, float* param, i
 
 	}
 
+	 __syncthreads();
+ 
 
 
 }
@@ -261,6 +270,9 @@ __global__ void Bandpass_back_1(Complex* tInput, int iWidth, float* param, int i
 	}
 
 
+
+	__syncthreads();  
+
 }
 
 
@@ -290,6 +302,17 @@ __global__ void Bandpass_back_1024(Complex* tInput, int iWidth, float* param, in
 
 
 	int  line_mod = bid % 8;
+
+
+//	line_serial = bid / 16;
+
+
+//	int  line_mod = bid % 16;
+
+
+
+
+
 
 
 	if ((0 == line_mod))    {                                                                     // 初试线   
@@ -326,6 +349,7 @@ __global__ void Bandpass_back_1024(Complex* tInput, int iWidth, float* param, in
 
 		else  if (threadIdx.x  >iParaLen - 1)   {                                              // 数据长度大于滤波器抽头长度,并且是初试线         
 
+			data_sum = 0;
 
 			for (int i = 0; i <= iParaLen - 1; i++)
 			{
@@ -348,18 +372,18 @@ __global__ void Bandpass_back_1024(Complex* tInput, int iWidth, float* param, in
 
 	else  {                                                                                 //  非初试线 (默认数据数目大于等于抽头数目)    
 
-
-
+		    data_sum = 0;
+		  
 
 		for (int i = 0; i <= iParaLen - 1; i++)
 		{
-			data_1 = *(tInput + line_serial*iWidth + iWidth - 1 - (threadIdx.x + blockIdx.x*blockDim.x) + i);
+			data_1 = *(tInput + line_serial*iWidth + iWidth - 1 - (threadIdx.x + line_mod*blockDim.x) + i);
 
 			data_sum += (data_1*param[i]);                                               //  y(N-1-n) = b(0)*x(N-1-n+0) +b(1)*x(N-1-n+1)+...+b(nb-1)*x(N-1-n+nb-1)
 
 		}
 
-		*(tOutPut + line_serial * iWidth + iWidth - 1 - (threadIdx.x + blockIdx.x*blockDim.x)) = data_sum;
+		*(tOutPut + line_serial * iWidth + iWidth - 1 - (threadIdx.x + line_mod*blockDim.x)) = data_sum;
 
 
 
@@ -633,32 +657,109 @@ __global__   void  displacement_api_cuda(Complex*disInputCuda, int rows, int col
 	      templateMatID = (Complex*)(disInputCuda + blockIdx.x*cols + (multiWin - 1) * winSize / 2 + threadIdx.x * stepSize);
 
 
-//		  cudaMemcpy(templateMatShare[out_offset].elem, templateMatID, winSize, cudaMemcpyDeviceToDevice);
 
-		  for (int i = 0; i < 100; i++) {
 
-			  templateMatShare[out_offset].elem[i] = *(templateMatID+i);
+		  for (int i = 0; i < 100;i++)  {
+
+			  if (i < 64)    {
+			  
+				  templateMatShare[out_offset].tempData.elem[i]= *(templateMatID + i);
+			  
+			  }
+		  
+			  else
+				      
+
+			    templateMatShare[out_offset].tempData.atom[i-64] = *(templateMatID + i);
+		  
+		  
+		  }
+
+
+
+		  /*      change   by wong 
+
+		  for (int i = 0; i < 64; i++) {
+
+		   templateMatShare[out_offset].elem[i] = *(templateMatID+i);
+
+
+	//		 *(templateMatShare[out_offset].elem+i)  = *(templateMatID + i);
 
 		  }
 
- // templateMatShare[threadIdx.x].elem = (Complex*)(disInputCuda + blockIdx.x*cols + (multiWin - 1) * winSize / 2 + threadIdx.x * stepSize);
+
+		  for (int j = 0; j < 36; j++) {
+
+			  templateMatShare[out_offset].atom[j] = *(templateMatID + j+64);
+
+
+			  //		 *(templateMatShare[out_offset].elem+i)  = *(templateMatID + i);
+
+		  }      change  by  wong 
+
+    */       
+
+
 
 
 		  objectMatID   = (Complex*)(disInputCuda + (blockIdx.x + 1)*cols + threadIdx.x * stepSize);
 
 
-//		  cudaMemcpy(objectMatShare[out_offset].elem, objectMatID, winSize*multiWin, cudaMemcpyDeviceToDevice);
-
-             
+   
 		  for (int i = 0; i < 200; i++)  {
+
+			  if (i<64)
+				  objectMatShare[out_offset].objData.elem_0[i]     = *(objectMatID + i);
+			  else if (i<128)
+				  objectMatShare[out_offset].objData.elem_1[i - 64] = *(objectMatID + i);
+
+			  else if (i<192)
+				  objectMatShare[out_offset].objData.elem_2[i - 128] = *(objectMatID + i);
+			  else
+				  objectMatShare[out_offset].objData.atom[i - 192]   = *(objectMatID + i);
+
+			  //	  *(objectMatShare[out_offset].elem + i) = *(objectMatID + i);
+
+		  }
+
+       
+
+
+
+
+
+		  /*    change  by wong  
+             
+		  for (int i = 0; i < 192; i++)  {
 		  
-			  objectMatShare[out_offset].elem[i] = *(objectMatID+i);
+			  if (i<64) 
+			  objectMatShare[out_offset].elem_0[i]       = *(objectMatID+i);
+			  else if (i<128)
+			  objectMatShare[out_offset].elem_1[i-64]    = *(objectMatID + i);
+
+			  else 
+			  objectMatShare[out_offset].elem_2[i - 128] = *(objectMatID + i);
+
+		//	  *(objectMatShare[out_offset].elem + i) = *(objectMatID + i);
 		  
 		  }
   
 
 
-	//		objectMat_startID[threadIdx.x].elem   = disInputCuda + (blockIdx.x + 1)*cols + threadIdx.x * stepSize;
+		  for (int j = 0; j < 8; j++) {
+
+			  objectMatShare[out_offset].atom[j] = *(templateMatID + j + 192);
+
+
+			  //		 *(templateMatShare[out_offset].elem+i)  = *(templateMatID + i);
+
+		  }      change  by  wong 
+		   
+
+   */
+   
+
 
 
 
@@ -672,7 +773,7 @@ __global__   void  displacement_api_cuda(Complex*disInputCuda, int rows, int col
 
 	//相关运算
 
-		  xcorr_cuda(templateMatShare[out_offset].elem, objectMatShare[out_offset].elem, resultMatShare[out_offset].elem);
+		  xcorr_cuda(templateMatShare[out_offset].tempData.elem, objectMatShare[out_offset].objData.atom, resultMatShare[out_offset].elem);
 
 
 //		__syncthreads();
@@ -1590,9 +1691,19 @@ CvMat*  CudaMain::bandpassFilt_1024_cuda(CvMat* rawMat)  {
 
 	dim3 blockID, threadID;
 
-	blockID.x = rawMat->rows*8;
+	blockID.x = rawMat->rows*8;                           //changed   by  wong  
 
-	threadID.x = rawMat->cols/8;
+
+//	blockID.x = rawMat->rows * 8*2;
+
+
+	threadID.x = rawMat->cols/8;                      //changed  by  wong 
+
+//	threadID.x = rawMat->cols / 16;
+
+
+
+
 
 	cudaThreadSynchronize();
 
@@ -1601,10 +1712,18 @@ CvMat*  CudaMain::bandpassFilt_1024_cuda(CvMat* rawMat)  {
 	cudaThreadSynchronize();
 
 
+	//test  for  line 2 
+
+//	cudaMemcpy(h_MatData, frontFilterMat, sizeof(Complex)*rawMat->cols*rawMat->rows, cudaMemcpyDeviceToHost);   //拷贝GPU处理后数据到	CPU
+
+//	SaveDataFile("front_1024.dat", rawMat);
+
+
 	cudaMemcpy(zeroFilterMat, frontFilterMat, sizeof(Complex)*rawMat->cols*rawMat->rows, cudaMemcpyDeviceToDevice);
 
 
 	Bandpass_back_1024 << <blockID, threadID >> >(zeroFilterMat, rawMat->cols, bandfilterParam, steps, frontFilterMat);
+
 
 
 	cudaThreadSynchronize();
@@ -1619,7 +1738,7 @@ CvMat*  CudaMain::bandpassFilt_1024_cuda(CvMat* rawMat)  {
 	cudaFree(frontFilterMat);
 
 
-	SaveDataFile("bpfilt_1024.dat", rawMat);
+	SaveDataFile("back_1024.dat", rawMat);
 
 
 	return rawMat;
@@ -1673,6 +1792,8 @@ CvMat*  CudaMain::computeDisplacement_cuda(CvMat* filtOutMat, int  multiWin, int
 	dim3 dThread;
 
 	dBlock.x = filtOutMat->rows - 1;                                 // 输出矩阵行数 ,块数        299
+
+//	dBlock.x = 200;                                                 //just   test   wong    2016/06/15
 
 	dThread.x = WinNum;                                             // 输出矩阵列数 , 线程数      799
 
