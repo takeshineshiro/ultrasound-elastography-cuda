@@ -106,12 +106,12 @@ typedef  struct  objectMat{
 
 typedef  struct resultMat{
 
-	Complex  elem[64];
+//	Complex  elem[64];
 
-	Complex  atom[37];
+//	Complex  atom[37];
 
 
-	
+	resultData   resData;
 
 
 }  resultMat;                                         //changed   by   wong    2016/5/19
@@ -245,7 +245,7 @@ private:                                                                       /
 
 
 	                                                                     // 计算一维位移矩阵，输出矩阵为了便于画图，保存，比较结果            
-  virtual  CvMat*computeDisplacement_cuda(CvMat* inputMat, int  multiWin, int winSize, int stepSize);
+ virtual  void computeDisplacement_cuda(CvMat* inputMat, int  multiWin, int winSize, int stepSize, CvMat*outputMat);
 
 
                                                                         // 计算一维位移矩阵，输出保留在GPU中
@@ -253,7 +253,10 @@ private:                                                                       /
 
 
 
-  virtual	CvMat* lowpassFilt_cuda(CvMat* disMat);                      //计算零相移滤波（低通），输出矩阵为了便于画图，保存，比较结果
+
+
+  virtual	CvMat* lowpassFilt_799_cuda(CvMat* disMat);                 //计算零相移滤波（低通），输出矩阵为了便于画图，保存，比较结果
+
 
 
 

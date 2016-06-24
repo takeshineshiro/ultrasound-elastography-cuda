@@ -13,6 +13,7 @@
 #include <device_launch_parameters.h>
 #include <device_functions.h>
 #include <math_functions.h>
+#include  <math.h>
 #include <string.h>
 #include <cstdio>
 
@@ -191,7 +192,7 @@ __global__ void Bandpass_front_1024(Complex* tInput, int iWidth, float* param, i
 
 	}
 
-	 __syncthreads();
+//	 __syncthreads();
  
 
 
@@ -247,7 +248,7 @@ __global__ void Bandpass_back_1(Complex* tInput, int iWidth, float* param, int i
 		}
 
 
-		*(tOutPut + blockIdx.x * iWidth + threadIdx.x) = data_sum;                 // y(n)
+		*(tOutPut + blockIdx.x * iWidth + iWidth - 1 - threadIdx.x) = data_sum;                 // y(n)
 
 	}
 
@@ -431,7 +432,7 @@ __device__      void   xcorr_cuda(const  Complex* templateMat_startID, const Com
 		Complex     pow_template = 0;
 
 
-		Complex     pow_object = 0;
+		Complex      pow_object = 0;
 
 
 		Complex     result = 0;
@@ -449,7 +450,7 @@ __device__      void   xcorr_cuda(const  Complex* templateMat_startID, const Com
 
 		//  ave
 
-		Complex   ave_object = sum_object / 200;
+		Complex   ave_object = sum_object / 100;
 
 
 		//fraction
@@ -484,7 +485,7 @@ __device__      void   xcorr_cuda(const  Complex* templateMat_startID, const Com
 
 		//result
 
-		result = sqrt(pow_template*pow_object);
+		result = sqrt(pow_template)*sqrt(pow_object);
 
 		//output
 
@@ -498,25 +499,27 @@ __device__      void   xcorr_cuda(const  Complex* templateMat_startID, const Com
 
 //changed   by  wong    2016/5/13
 
-__device__      void   minMax_cuda(Complex*resultMat_startID, Complex* min_value, Complex*  max_value, int  max_location)   {
+__device__      void   minMax_cuda(Complex*resultMat_startID, Complex* min_value, Complex*  max_value, int * max_location)   {
 
-	int      max_loc_temp = 0;
+//	int      max_loc_temp = 0;
 
-	int      min_loc_temp = 0;
+//	int      min_loc_temp = 0;
 
-	Complex* max_temp     = 0;
+//	float      max_temp   = 0;
 
-	Complex* min_temp    = 0;
+//	float      min_temp   = 0;
 
 	//求最大值及位置
 
 	for (int i = 0; i < 101; i++)  {
 
-		if (*(resultMat_startID + i) >= *max_temp)  {
+		if (*(resultMat_startID + i) >= *max_value)  {
 
-			*max_temp = *(resultMat_startID + i);
+			*max_location   = i;
 
-			max_loc_temp = i;
+			*max_value = *(resultMat_startID + i);
+
+
 
 		}
 
@@ -524,25 +527,27 @@ __device__      void   minMax_cuda(Complex*resultMat_startID, Complex* min_value
 
 	//求最小值及位置
 
-	for (int i = 0; i < 101; i++)  {
+//	for (int i = 0; i < 101; i++)  {
 
-		if (*(resultMat_startID + i) <= *min_temp)  {
+//		if (*(resultMat_startID + i) <= *min_value)  {
 
-			*min_temp = *(resultMat_startID + i);
+		//	min_loc_temp = i;
 
-			min_loc_temp = i;
-		}
+//			*min_value = *(resultMat_startID + i);
+
+			
+//		}
 
 
-	}
+//	}
 
 	//输出
 
-	*min_value = *min_temp;
+//	*min_value = min_temp;
 
-	*max_value = *max_temp;
+//	*max_value = max_temp;
 
-	max_location = max_loc_temp;
+//	max_location = max_loc_temp;
 
 }
 
@@ -550,14 +555,14 @@ __device__      void   minMax_cuda(Complex*resultMat_startID, Complex* min_value
  
 //changed  by   wong      2016/5/17
 
-__device__    void    interp_cuda(Complex*resultMat_startID, int  max_loc, Complex*max_value, int multiWin, int  winSize, Complex*  displace)     {
+__device__    void    interp_cuda(Complex*resultMat_startID, int *  max_loc, Complex*max_value, int * multiWin, int * winSize, Complex*  displace)     {
 
-	Complex*pre  = resultMat_startID + max_loc - 1;
+	Complex*pre = (Complex*)resultMat_startID + *max_loc - 1;
 
-	Complex*next = resultMat_startID + max_loc + 1;
+	Complex*next = (Complex*)resultMat_startID + *max_loc + 1;
 
 
-	*displace   = (multiWin - 1) * winSize / 2 - max_loc - (*pre - *next) / (2 * (*pre - 2 * *max_value + *next));
+	*displace   = (*multiWin - 1) * *winSize / 2 - *max_loc - (*pre - *next) / (2 * (*pre - 2 * *max_value + *next));
 
 
 }
@@ -727,6 +732,19 @@ __global__   void  displacement_api_cuda(Complex*disInputCuda, int rows, int col
 
 
 
+		  for (int i = 0; i < 101; i++)  {
+		   
+			  if (i<64)
+				  resultMatShare[out_offset].resData.elem[i]   = 0;
+		   
+			  else
+				  resultMatShare[out_offset].resData.atom[i-64] = 0;
+		  
+		  }
+		 
+
+
+
 
 
 		  /*    change  by wong  
@@ -773,16 +791,17 @@ __global__   void  displacement_api_cuda(Complex*disInputCuda, int rows, int col
 
 	//相关运算
 
-		  xcorr_cuda(templateMatShare[out_offset].tempData.elem, objectMatShare[out_offset].objData.atom, resultMatShare[out_offset].elem);
+		  xcorr_cuda(templateMatShare[out_offset].tempData.elem, objectMatShare[out_offset].objData.elem_0, resultMatShare[out_offset].resData.elem);
 
 
-//		__syncthreads();
+	//	__syncthreads();
+
 //	cudaThreadSynchronize();
 
 
 	//查找最大值
 
-		  minMax_cuda(resultMatShare[out_offset].elem, &min[out_offset], &max[out_offset], max_location[out_offset]);
+		minMax_cuda(resultMatShare[out_offset].resData.elem, &min[out_offset], &max[out_offset], &max_location[out_offset]);
 
 
 //	__syncthreads();
@@ -791,10 +810,10 @@ __global__   void  displacement_api_cuda(Complex*disInputCuda, int rows, int col
 
 	//插值
 
-		  interp_cuda(resultMatShare[out_offset].elem, max_location[out_offset], &max[out_offset], multiWin, winSize, &displacement[out_offset]);
+		interp_cuda(resultMatShare[out_offset].resData.elem, &max_location[out_offset], &max[out_offset], &multiWin, &winSize, &displacement[out_offset]);
 
 
-//	__syncthreads();
+//		__syncthreads();
 
 //	cudaThreadSynchronize();
 
@@ -823,16 +842,26 @@ __global__   void  displacement_api_cuda(Complex*disInputCuda, int rows, int col
 
 __global__  void   remove_singular_cuda(Complex*disOutputCuda, Complex*singularOutputCuda)   {
 
-	int   offset = blockIdx.x *blockDim.x + threadIdx.x;                         // 输出位移矩阵偏移值
+	int   offset = blockIdx.x *blockDim.x + threadIdx.x;                                           // 输出位移矩阵偏移值
 
-	int   offrow = (blockIdx.x - 1)*blockDim.x + threadIdx.x;                   // 上一行输出位移矩阵偏移值
+	int    bid   = blockIdx.x;                                                                     //  block   id
 
-	int    bid   = blockIdx.x;                                                  //  block   id
+	int    tid   = threadIdx.x;                                                                    //  thread  id    
 
-	int    tid   = threadIdx.x;                                                //  thread  id             
+//	int   offrow =( bid  > 0 ) ? (blockIdx.x - 1)*blockDim.x + threadIdx.x  : 0;                   // 上一行输出位移矩阵偏移值  此处得修改  wong    2016/06/24
+
+	int    offrow = 0;
+
+	if (bid  > 0 && bid < gridDim.x - 1 && tid < blockDim.x-1 )   {
+	
+		    offrow = (blockIdx.x - 1)*blockDim.x + threadIdx.x;
+	
+	} 
 
 
-	if (bid > 0 && (disOutputCuda[offset] > 12))  {
+
+
+	if (bid > 0 && bid < gridDim.x - 1 && tid < blockDim.x - 1 && (abs(disOutputCuda[offset]) > 12))  {
 
 		singularOutputCuda[offset] = disOutputCuda[offrow];
 
@@ -852,13 +881,15 @@ __global__  void   remove_singular_cuda(Complex*disOutputCuda, Complex*singularO
 
 __global__   void   displace_add_cuda(Complex*singularOutputCuda, Complex*addOutputCuda)   {
 
-	int   offset = blockIdx.x *blockDim.x + threadIdx.x;                        // 输出位移矩阵偏移值
+	int   offset = blockIdx.x *blockDim.x + threadIdx.x;                              // 输出位移矩阵偏移值
 
-	int   offrow = (blockIdx.x - 1)*blockDim.x + threadIdx.x;                   // 上一行输出位移矩阵偏移值
+	int    bid   = blockIdx.x;                                                          // block   id
 
-	int    bid   = blockIdx.x;                                                  // block   id
+	int    tid   = threadIdx.x;                                                         // thread  id   
 
-	int    tid   = threadIdx.x;                                                 // thread  id             
+	int   offrow = (bid >0 ) ? (blockIdx.x - 1)*blockDim.x + threadIdx.x  :0 ;        // 上一行输出位移矩阵偏移值
+
+	          
 
 	if (bid > 0)  {
 
@@ -892,7 +923,9 @@ __global__   void   extend_data_cuda(Complex*addOutputCuda, Complex*extendOutput
 
 	if (tid<N - 1)  {
 
-		extendOutputCuda[offset] = 0;                                          //  extend  0
+		int   add_base = blockIdx.x *(blockDim.x - (N - 1));
+
+		extendOutputCuda[offset] = addOutputCuda[add_base];                    //  extend  primites
 
 	}
 
@@ -921,18 +954,20 @@ __global__ void  smooth_filter_cuda(Complex*extendOutputCuda, Complex* smoothOut
 	int    tid = threadIdx.x;                                                   // thread  id  
 
 
-	Complex*  sum = 0;
+	Complex   sum = 0;
 
 
 	for (int i = extbase; i < extbase + N; i++)  {
 
 
-		*sum += extendOutputCuda[i];
+		Complex  temp = *(extendOutputCuda + i);
+
+		sum = sum + temp;
 
 
 	}
 
-	smoothOutputCuda[offset] = *sum / N;
+	smoothOutputCuda[offset] = sum / N;
 
 }
 
@@ -1738,7 +1773,7 @@ CvMat*  CudaMain::bandpassFilt_1024_cuda(CvMat* rawMat)  {
 	cudaFree(frontFilterMat);
 
 
-	SaveDataFile("back_1024.dat", rawMat);
+	//SaveDataFile("back_1024.dat", rawMat);
 
 
 	return rawMat;
@@ -1774,7 +1809,7 @@ void  CudaMain::zeroFilter_cuda(CvMat* rawMat, Complex*filterOutput) {
 
 
 
-CvMat*  CudaMain::computeDisplacement_cuda(CvMat* filtOutMat, int  multiWin, int winSize, int stepSize){
+void   CudaMain::computeDisplacement_cuda(CvMat* filtOutMat, int  multiWin, int winSize, int stepSize, CvMat*outputMat){
 
 //	CvMat*outputMat = 0;
 
@@ -1782,7 +1817,7 @@ CvMat*  CudaMain::computeDisplacement_cuda(CvMat* filtOutMat, int  multiWin, int
 
 	Complex* hInput   = (Complex*)filtOutMat->data.fl;                         //   数据位置；
 
-	//Complex*hOutput = (Complex*)outputMat->data.fl;                        //   数据位置；
+	Complex*hOutput  = (Complex*)outputMat->data.fl;                        //   数据位置；
 
 
 	cudaMemcpy(inputMat, hInput, filtOutMat->cols*filtOutMat->rows*sizeof(Complex), cudaMemcpyHostToDevice);   //  CPU-GPU
@@ -1867,6 +1902,16 @@ CvMat*  CudaMain::computeDisplacement_cuda(CvMat* filtOutMat, int  multiWin, int
 
 	cudaThreadSynchronize();
 
+	//test  for   displace      changed  by  wong   2016/06/20
+
+	cudaMemcpy(hOutput, displacement, sizeof(Complex)*outputMat->cols*outputMat->rows, cudaMemcpyDeviceToHost);   //拷贝GPU处理后数据到	CPU
+
+	SaveDataFile("dis_raw_haha.dat", outputMat);
+
+
+
+
+
 
 	cudaFree(templateMatShare);
 
@@ -1879,6 +1924,7 @@ CvMat*  CudaMain::computeDisplacement_cuda(CvMat* filtOutMat, int  multiWin, int
 	cudaFree(max);
 
 	cudaFree(max_location);
+
 
 
 
@@ -1933,13 +1979,13 @@ CvMat*  CudaMain::computeDisplacement_cuda(CvMat* filtOutMat, int  multiWin, int
 	//从GPU拷贝到CPU内存
 
 
-	cudaMemcpy(hInput, singularOutputCuda, dBlock.x  * dThread.x*sizeof(Complex), cudaMemcpyDeviceToHost);   //  GPU-CPU
+	cudaMemcpy(hOutput, singularOutputCuda, dBlock.x  * dThread.x*sizeof(Complex), cudaMemcpyDeviceToHost);   //  GPU-CPU
 
 
 	cudaFree(singularOutputCuda);
 
-	return    filtOutMat;
-
+	
+	SaveDataFile("timefliter.dat", outputMat);
 
 
 }
@@ -1958,17 +2004,160 @@ void   CudaMain::zeroDisplacement_cuda(CvMat* inputMat, int  multiWin, int winSi
 }
 
 
+//changed   by  wong     2016/06/22         lowpass filter    size  : 299*799
+
+//正滤波   零相移
+
+__global__ void     lowpass_front_799(Complex* tInput, int iWidth, float* param, int iParaLen, Complex* tOutPut)    {
+
+
+	float data_sum;
+
+	float data_1;
+
+	data_sum = 0.0;
+
+
+	if (threadIdx.x <= iParaLen - 1)                                         //数据数目小于等于抽头数目
+	{
+
+		for (int i = 0; i <= threadIdx.x; i++)
+		{
+
+
+			data_1 = *(tInput + blockIdx.x*iWidth + threadIdx.x - i);      //b(0)*x(n-0)+b(1)*x(n-1)+...+b(n)*x(0)   
+
+			data_sum += (data_1*param[i]);
+
+		}
+
+		data_1 = *(tInput + blockIdx.x * iWidth);                          // x(0)
+
+
+		for (int j = threadIdx.x + 1; j <= iParaLen - 1; j++)
+		{
+			data_sum += (data_1*param[j]);                                 //b(n+1)*x(0)+...+b(nb-2)*x(0)
+		}
+
+		*(tOutPut + blockIdx.x * iWidth + threadIdx.x) = data_sum;
 
 
 
-CvMat*  CudaMain::lowpassFilt_cuda(CvMat* disMat)  {
+	}
+	else                                                                  //数据数目大于抽头数目            
+	{
+		//data_1 = (tInput + blockIdx.x*iWidth + blockIdx.y - threadIdx.x)->x;
+		for (int i = 0; i <= iParaLen - 1; i++)
+		{
+
+			data_1 = *(tInput + blockIdx.x*iWidth + threadIdx.x - i);   //b(0)*x(n-0)+b(1)*x(n-1)+...+b(nb-2)*x(n-(nb-2))  
+
+			data_sum += (data_1*param[i]);
+
+		}
+
+		*(tOutPut + blockIdx.x * iWidth + threadIdx.x) = data_sum;
+
+	}
+
+
+
+
+}
+
+
+
+   //changed   by   wong      2016/06/22        zero-phase  filter    size  :  299*799
+
+  // 逆滤波 ，零相移     
+
+
+__global__  void   lowpass_back_799(Complex* tInput, int iWidth, float* param, int iParaLen, Complex* tOutPut)   {
+
+
+	
+
+	float data_1;
+
+	float data_sum;
+
+	data_sum = 0.0;
+
+
+
+	if (threadIdx.x <= iParaLen - 1)   {                                //  数据长度小于等于滤波器抽头长度
+
+
+		for (int i = 0; i <= threadIdx.x; i++)
+		{
+
+
+			data_1 = *(tInput + blockIdx.x*iWidth + iWidth - 1 - threadIdx.x + i);      //
+
+			data_sum += (data_1*param[i]);
+
+		}
+
+
+		data_1 = *(tInput + blockIdx.x * iWidth + iWidth - 1);                        //  x(N-1) 
+
+
+		for (int j = threadIdx.x + 1; j <= iParaLen - 1; j++)
+		{
+
+			data_sum += (data_1*param[j]);                                            // b(n+1)*x(N-1)+...+b(nb-1)*x(N-1) 
+
+		}
+
+
+		*(tOutPut + blockIdx.x * iWidth + iWidth - 1 -threadIdx.x) = data_sum;                 // y(n)
+
+	}
+
+	else    {                                                                       //数据长度大于滤波器抽头长度         
+
+
+		for (int i = 0; i <= iParaLen - 1; i++)
+		{
+			data_1 = *(tInput + blockIdx.x*iWidth + iWidth - 1 - threadIdx.x + i);
+
+			data_sum += (data_1*param[i]);                                         //  y(N-1-n) = b(0)*x(N-1-n+0) +b(1)*x(N-1-n+1)+...+b(nb-1)*x(N-1-n+nb-1)
+
+		}
+
+		*(tOutPut + blockIdx.x * iWidth + iWidth - 1 - threadIdx.x) = data_sum;
+
+
+
+
+	}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+CvMat*  CudaMain::lowpassFilt_799_cuda(CvMat* disMat)  { 
 
 
 	Complex* h_MatData = (Complex*)disMat->data.fl;
 
-	cudaMemsetAsync(lowBackMat, 0, sizeof(Complex)*disMat->cols*disMat->rows);
+	cudaMemsetAsync(lowBackMat, 0, sizeof(Complex)*disMat->rows*disMat->cols);
 
-	cudaMemcpyAsync(lowFrontMat, h_MatData, sizeof(Complex)*disMat->cols*disMat->rows, cudaMemcpyHostToDevice);           //拷贝CPU中RF数据到GPU
+	cudaMemcpyAsync(lowFrontMat, h_MatData, sizeof(Complex)*disMat->rows*disMat->cols, cudaMemcpyHostToDevice);           //拷贝CPU中RF数据到GPU
 
 	int steps = cpu_lowfilterParam.size();
 
@@ -1984,17 +2173,23 @@ CvMat*  CudaMain::lowpassFilt_cuda(CvMat* disMat)  {
 
 	threadID.x = disMat->cols;
 
+
+	lowpass_front_799 << <blockID, threadID >> >(lowFrontMat, disMat->cols, lowfilterParam, steps, lowBackMat);
+
 	cudaThreadSynchronize();
 
-	Bandpass_front_1 << <blockID, threadID >> >(lowFrontMat, disMat->cols, lowfilterParam, steps, lowBackMat);
+	//test   for  lower   begin
 
-	cudaThreadSynchronize();
+	cudaMemcpy(h_MatData, lowBackMat, sizeof(Complex)*disMat->cols*disMat->rows, cudaMemcpyDeviceToHost);   //拷贝GPU处理后数据到	CPU
+
+	SaveDataFile("799_lower.dat", disMat);
+
+	//test  end 
+
+	cudaMemcpy(lowFrontMat, lowBackMat, sizeof(Complex)*disMat->rows*disMat->cols, cudaMemcpyDeviceToDevice);
 
 
-	cudaMemcpy(lowFrontMat, lowBackMat, sizeof(Complex)*disMat->cols*disMat->rows, cudaMemcpyDeviceToDevice);
-
-
-	Bandpass_back_1 << <blockID, threadID >> >(lowFrontMat, disMat->cols, lowfilterParam, steps, lowBackMat);
+	lowpass_back_799 << <blockID, threadID >> >(lowFrontMat, disMat->cols, lowfilterParam, steps, lowBackMat);
 
 
 	cudaThreadSynchronize();
@@ -2009,7 +2204,11 @@ CvMat*  CudaMain::lowpassFilt_cuda(CvMat* disMat)  {
 	cudaFree(lowBackMat);
 
 
+	SaveDataFile("lowfliter.dat", disMat);
+
 	return disMat;
+
+
 
 
 }
@@ -2035,7 +2234,7 @@ void  CudaMain::process(const EInput &input, EOutput& output) {
 
 
 
-	   bandpassFilt_1024_cuda(cpu_inputMat);                                                          //    带通滤波       
+	   bandpassFilt_1024_cuda(cpu_inputMat);                                                     //    带通滤波       
 
 
 	   int  multiWin    = 2;
@@ -2046,10 +2245,18 @@ void  CudaMain::process(const EInput &input, EOutput& output) {
 
 
 	   
-	   cpu_disMat       = computeDisplacement_cuda(cpu_inputMat,  multiWin,  winSize, stepSize);   //  位移计算       
+	    computeDisplacement_cuda(cpu_inputMat, multiWin, winSize, stepSize, cpu_disMat);       //  位移计算       
 	
 
-	   lowpassFilt_cuda(cpu_disMat);                                                              //    低通滤波     
+		lowpassFilt_799_cuda (cpu_disMat);                                                   //    低通滤波  
+
+
+		int  size = 0;
+
+
+
+
+
 
 
 

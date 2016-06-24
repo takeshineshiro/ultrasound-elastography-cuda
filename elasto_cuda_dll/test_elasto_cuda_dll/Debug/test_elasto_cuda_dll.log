@@ -1,4 +1,4 @@
-﻿Build started 2016/6/17 15:59:03.
+﻿Build started 2016/6/23 9:57:02.
      1>Project "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\test_elasto_cuda_dll\test_elasto_cuda_dll.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          D:\vs_2013\VC\bin\CL.exe /c /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\test_elasto_cuda_dll.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
@@ -22,4 +22,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.76
+Time Elapsed 00:00:00.78
