@@ -5,7 +5,6 @@
 #include  "SysConfig.h"
 #include  "CElasto.h"
 #include  "FileUtility.h"
-
 #include <fstream>
 #include <string>
 #include <iostream>
@@ -16,6 +15,10 @@
 #include  <math.h>
 #include <string.h>
 #include <cstdio>
+#include "opencv/highgui.h"
+#include "opencv/cv.h"
+#include "ImageFunc.h"
+
 
 #endif
 
@@ -450,7 +453,7 @@ __device__      void   xcorr_cuda(const  Complex* templateMat_startID, const Com
 
 		//  ave
 
-		Complex   ave_object = sum_object / 100;
+		Complex   ave_object =   sum_object / 100;
 
 
 		//fraction
@@ -485,7 +488,7 @@ __device__      void   xcorr_cuda(const  Complex* templateMat_startID, const Com
 
 		//result
 
-		result = sqrt(pow_template)*sqrt(pow_object);
+		result = sqrt(pow_template*pow_object);
 
 		//output
 
@@ -571,7 +574,9 @@ __device__    void    interp_cuda(Complex*resultMat_startID, int *  max_loc, Com
 
 
 
-//输出为位移299*799矩阵
+// 输出为位移299*799矩阵
+
+// test   result :  ok     wong   2016/06/24
 
 __global__   void  displacement_api_cuda(Complex*disInputCuda, int rows, int cols, int  multiWin, int winSize, int  stepSize, templateMat*templateMatShare, objectMat* objectMatShare, resultMat*resultMatShare, Complex*min, Complex*max, int*max_location, Complex* displacement )      {
 
@@ -881,19 +886,37 @@ __global__  void   remove_singular_cuda(Complex*disOutputCuda, Complex*singularO
 
 __global__   void   displace_add_cuda(Complex*singularOutputCuda, Complex*addOutputCuda)   {
 
-	int   offset = blockIdx.x *blockDim.x + threadIdx.x;                              // 输出位移矩阵偏移值
+	int   offset = blockIdx.x *blockDim.x + threadIdx.x;                               // 输出位移矩阵偏移值
 
 	int    bid   = blockIdx.x;                                                          // block   id
 
 	int    tid   = threadIdx.x;                                                         // thread  id   
 
-	int   offrow = (bid >0 ) ? (blockIdx.x - 1)*blockDim.x + threadIdx.x  :0 ;        // 上一行输出位移矩阵偏移值
+	int   offrow = (bid >0 ) ? ( (blockIdx.x - 1)*blockDim.x + threadIdx.x)  :0 ;       // 上一行输出位移矩阵偏移值
 
-	          
+	int   nextoff =  (blockIdx.x + 1)*blockDim.x + threadIdx.x;
+
+
+	Complex  sum = 0.0;
+
+
+
 
 	if (bid > 0)  {
 
-		addOutputCuda[offset] = singularOutputCuda[offset] + singularOutputCuda[offrow];
+		       //new  changed  
+
+		for (int i = 0; i < bid; i++)   {
+
+			int  off = i*blockDim.x + threadIdx.x;
+
+
+			sum = sum + singularOutputCuda[off];
+
+		}
+
+
+		addOutputCuda[offset] = singularOutputCuda[offset] + sum;
 
 
 	}
@@ -903,6 +926,25 @@ __global__   void   displace_add_cuda(Complex*singularOutputCuda, Complex*addOut
 		addOutputCuda[offset] = singularOutputCuda[offset];
 
 	}
+
+
+
+
+
+
+
+//	if (bid < gridDim.x - 1)     {
+	
+	    
+//		addOutputCuda[nextoff] = singularOutputCuda[nextoff] + singularOutputCuda[offset];
+	
+	
+//	}
+
+
+
+
+
 
 
 
@@ -1411,6 +1453,21 @@ void   CudaMain::mallocGPUMem() {
 
 
 
+	cudaMalloc(&fit_IN, cxorrLines *iOutRows* sizeof(Complex));          //  位移矩阵GPU内存分配
+
+
+	int   points = 5;
+
+
+	int   strain_col = iOutRows - points + 1;
+
+	cudaMalloc(&fit_Out, cxorrLines *strain_col* sizeof(Complex));          //  位移矩阵GPU内存分配
+
+
+
+
+
+
 	int RadonInputCols      = 1961;                                     // 1961
 
 	int RadonInputRows      = 4;                                       // 4
@@ -1579,7 +1636,19 @@ void  CudaMain::mallocMats() {
 
 	int iOutRows    = (MatCols - multiWin*windowHW) / step;               //    位移矩阵计算需要匹配的段数     799 
 
-	cpu_disMat      = cvCreateMat(cxorrLines, iOutRows, CV_32FC1);       //     位移矩阵     
+	cpu_disMat      = cvCreateMat(cxorrLines, iOutRows, CV_32FC1);       //     位移矩阵   
+
+
+
+	int  fit_point  = 5;
+
+	
+	int  fit_cols = iOutRows - fit_point + 1;
+
+	cpu_fitMat = cvCreateMat(cxorrLines, fit_cols, CV_32FC1);                 
+
+
+
 
 
 	cpu_SplineOutMat = cvCreateMat(1962, 4, CV_32FC1);                  //    SplineOutMat输出，便于画图，比较结果  
@@ -1906,9 +1975,7 @@ void   CudaMain::computeDisplacement_cuda(CvMat* filtOutMat, int  multiWin, int 
 
 	cudaMemcpy(hOutput, displacement, sizeof(Complex)*outputMat->cols*outputMat->rows, cudaMemcpyDeviceToHost);   //拷贝GPU处理后数据到	CPU
 
-	SaveDataFile("dis_raw_haha.dat", outputMat);
-
-
+	SaveDataFile("weiyi_gpu.dat", outputMat);
 
 
 
@@ -1939,11 +2006,34 @@ void   CudaMain::computeDisplacement_cuda(CvMat* filtOutMat, int  multiWin, int 
 
 	cudaThreadSynchronize();
 
+
+	//test  for   displace      changed  by  wong   2016/06/20
+
+//	cudaMemcpy(hOutput, singularOutputCuda, sizeof(Complex)*outputMat->rows*outputMat->cols, cudaMemcpyDeviceToHost);   //拷贝GPU处理后数据到	CPU
+
+//	 SaveDataFile("sigular_gpu.dat", outputMat);
+
+
+
+
+
 	//位移叠加                 
 
 	displace_add_cuda << <dBlock, dThread >> >  (singularOutputCuda, addOutputCuda);
 
 	cudaThreadSynchronize();
+
+
+	//test  for   add      changed  by  wong   2016/06/20
+
+//	cudaMemcpy(hOutput, addOutputCuda, sizeof(Complex)*outputMat->rows*outputMat->cols, cudaMemcpyDeviceToHost);   //拷贝GPU处理后数据到	CPU
+
+//    SaveDataFile("add_gpu.dat", outputMat);
+
+
+
+
+
 
 	//前N-1列补0    
 
@@ -1962,6 +2052,20 @@ void   CudaMain::computeDisplacement_cuda(CvMat* filtOutMat, int  multiWin, int 
 	cudaThreadSynchronize();
 
 	cudaFree(extendOutputCuda);
+
+
+	//test  for   smmoth      changed  by  wong   2016/06/20
+
+//	cudaMemcpy(hOutput, disOutput, sizeof(Complex)*outputMat->rows*outputMat->cols, cudaMemcpyDeviceToHost);   //拷贝GPU处理后数据到	CPU
+
+///	SaveDataFile("smooth_gpu.dat", outputMat);
+
+
+
+
+
+
+
 
 	//时域滤波，匹配滤波，50Hz增强     这里 param, iParaLen, steps 使用常量内存 
 
@@ -1985,7 +2089,9 @@ void   CudaMain::computeDisplacement_cuda(CvMat* filtOutMat, int  multiWin, int 
 	cudaFree(singularOutputCuda);
 
 	
-	SaveDataFile("timefliter.dat", outputMat);
+	//test  for   smmoth      changed  by  wong   2016/06/20
+
+    SaveDataFile("time_gpu.dat", outputMat);
 
 
 }
@@ -2204,7 +2310,14 @@ CvMat*  CudaMain::lowpassFilt_799_cuda(CvMat* disMat)  {
 	cudaFree(lowBackMat);
 
 
-	SaveDataFile("lowfliter.dat", disMat);
+	SaveDataFile("lowpass_gpu.dat", disMat);
+
+
+
+	const   char* file_pwd = "lowpass_gpu.bmp";
+
+
+	MakeImage(disMat, file_pwd);
 
 	return disMat;
 
@@ -2212,6 +2325,618 @@ CvMat*  CudaMain::lowpassFilt_799_cuda(CvMat* disMat)  {
 
 
 }
+
+
+__device__  void    fitLine_cv_func(Complex*xx_tmp, Complex*yy_tmp, Complex* result)   {
+
+
+	Complex xmean = 0.0f;
+
+	Complex ymean = 0.0f;
+
+	for (int i = 0; i < 5; i++)
+	{
+		xmean += xx_tmp[i];
+
+		ymean += yy_tmp[i];
+
+	}
+
+
+	xmean /= 5;
+
+	ymean /= 5;
+
+
+	Complex sumx2 = 0.0f;
+
+	Complex sumxy = 0.0f;
+
+	for (int i = 0; i < 5; i++)
+	{
+
+		sumx2 += (xx_tmp[i] - xmean) * (xx_tmp[i] - xmean);
+
+		sumxy += (yy_tmp[i] - ymean) * (xx_tmp[i] - xmean);
+
+	}
+
+
+	*result = (Complex)(sumxy / sumx2);
+
+}
+
+
+
+
+
+//changed   by  wong     2016/07/04
+__global__  void  fitLine_L2_cuda(Complex*strain_IN, Complex*xx_IN,  Complex*strainOut)   {
+
+	int   offset = blockIdx.x *blockDim.x + threadIdx.x;                        // 输出位移矩阵偏移值
+
+
+	int    bid = blockIdx.x;                                                    // block   id
+
+	int    tid = threadIdx.x;                                                   // thread  id     
+
+
+	int    act_off = blockIdx.x *(blockDim.x + 5 - 1) + threadIdx.x;  // input
+
+
+
+	Complex   xx_tmp[5];
+
+	Complex  yy_tmp[5];
+
+
+	for (int i = 0; i < 5; i++)  {
+
+		xx_tmp[i] = xx_IN[act_off + i];
+
+		yy_tmp[i] = strain_IN[act_off + i];
+
+
+	}
+
+
+	fitLine_cv_func(xx_tmp, yy_tmp, &strainOut[offset]);
+
+
+}
+
+
+
+
+
+
+//  changed  by  wong      2016/07/01
+
+void  CudaMain::strainCalculate_cuda(CvMat*disMat,    CvMat* fitMat)  {
+
+
+	Complex* h_MatData = (Complex*)disMat->data.fl;
+
+
+	Complex* out_MatData = (Complex*)fitMat->data.fl;
+
+
+	cudaMemcpyAsync(fit_IN, h_MatData, sizeof(Complex)*disMat->rows*disMat->cols, cudaMemcpyHostToDevice);           //拷贝CPU中RF数据到GPU
+
+
+	int   fit_points = 5;
+
+
+	dim3 blockID, threadID;
+
+	blockID.x = disMat->rows;
+
+	threadID.x = disMat->cols - fit_points +1;
+
+
+//	Complex* point_num;
+
+
+//	cudaMalloc(&point_num,  sizeof(Complex));             //  位移矩阵GPU内存分配
+
+
+	//XX值分配
+
+	int   xx_rows = disMat->rows;
+
+	int  xx_cols  = disMat->cols;
+
+
+	CvMat*    xx_mat = cvCreateMat(xx_rows, xx_cols, CV_32FC1);
+
+
+	   
+	for (int i = 0; i < xx_rows; i++)   {
+
+		for (int j = 0; j < xx_cols; j++)  {
+		
+		
+			*(static_cast<float*>(static_cast<void*>(CV_MAT_ELEM_PTR(*xx_mat, i, j)))) = j*fit_points;
+				
+		}
+	
+	}
+
+
+	Complex* xx_IN  ;
+
+    cudaMalloc(&xx_IN, sizeof(Complex)*xx_rows*xx_cols);             //  位移矩阵GPU内存分配
+
+
+	Complex* xx_Data = (Complex*)xx_mat->data.fl;
+
+
+	cudaMemcpyAsync(xx_IN, xx_Data, sizeof(Complex)*xx_mat->rows*xx_mat->cols, cudaMemcpyHostToDevice);
+
+
+
+	fitLine_L2_cuda << <blockID, threadID >> >  (fit_IN, xx_IN,  fit_Out);
+
+
+	cudaMemcpy(out_MatData, fit_Out, sizeof(Complex)*fitMat->rows*fitMat->cols, cudaMemcpyDeviceToHost);   //拷贝GPU处理后数据到	CPU
+
+
+
+
+	cudaFree(fit_IN);
+
+	cudaFree(xx_IN);
+
+	cudaFree(fit_Out);
+
+
+	SaveDataFile("fitLine_gpu.dat", fitMat);
+
+
+
+
+
+
+
+}
+
+
+
+
+void  CudaMain::ImagePostProc(IplImage *strImage, const char *filename, const CvPoint &start, const CvPoint &end)
+{
+
+	const char * gray_file = "strain_gpu_gray.bmp";
+
+
+	{
+		IplImage *pimgStrain = cvCreateImage(cvGetSize(strImage), strImage->depth, 3);
+
+		cvCvtColor(strImage, pimgStrain, CV_GRAY2BGR);
+
+		cvSaveImage(gray_file, pimgStrain);
+
+		cvReleaseImage(&pimgStrain);
+
+	}
+
+	{
+
+		IplImage *pImage = cvLoadImage(gray_file, 0);
+
+		IplImage *pimgStrain = cvCreateImage(cvGetSize(pImage), pImage->depth, 3);
+
+		pimgStrain = cvCreateImage(cvGetSize(pImage), pImage->depth, 3);
+
+
+		//图像增强 法1
+		// 输入参数 [0,0.5] 和 [0.5,1], gamma=1  图像增强
+		ImageAdjust(pImage, pImage, 0, 0.5, 0, 0.5, 0.6);// Y方向：mapped to bottom and top of dst	
+
+		//cvSaveImage("res\\ImageAdjust.bmp", image);//保存增强效果图
+
+		//图像增强 法2 效果不好
+		//ImageStretchByHistogram(image, image);//图像增强: 这个是全部变亮了
+		//cvSaveImage("res\\ImageStretchByHistogram.bmp", image);
+
+		//图像增强 法3 效果不好
+		//ImageStretchByHistogram2(image, image);//图像增强: 这个是全部变亮了
+		//cvSaveImage("res\\ImageStretchByHistogram2.bmp", image);
+
+		cvNot(pImage, pImage);//黑白颜色翻转
+
+		//cvSaveImage("res\\cvNot.bmp", image);//黑白图
+		cvCvtColor(pImage, pimgStrain, CV_GRAY2BGR);//图像转换成BGR
+
+
+		ChangeImgColor(pimgStrain);
+
+
+		cvLine(pimgStrain, start, end, CV_RGB(255, 0, 0), 2, CV_AA, 0);   //画线
+
+
+		cvSaveImage(filename, pimgStrain);
+
+
+		//释放资源
+		cvReleaseImage(&pImage);
+
+		cvReleaseImage(&pimgStrain);
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+// 拉东变换
+// pmatDisplacement,   rows: disp;  cols: time-extent( lines)
+//     列,表示一条线, 也就是时间 轴
+//     行,表示应变的值
+//////////////////////////////////////////////////////////////////////////
+
+void   CudaMain::RadonSum(const CvMat *pmatDisplacement, CvMat **ppmatRodan) {
+
+
+	int xstart          = 0;
+
+	int xend            = pmatDisplacement->rows;                      //159
+
+	int t               = pmatDisplacement->cols;                     // time extent        //298 
+
+	CvMat *pmatRodan    = cvCreateMat(t - 1, t, pmatDisplacement->type);
+
+	cvZero(pmatRodan);
+
+	int tstart          = 0;
+
+	int tend            = 0;
+
+	int dx              = 0;
+
+	float dt            = 0.0f;
+
+	float c             = 0.0f;
+
+
+	for (tstart = 0; tstart < t - 1; tstart++)
+	{
+
+		for (tend = tstart + 1; tend < t; tend++)
+		{
+
+			c = (float)(xend - xstart) / (tend - tstart);                     //k
+
+			for (dx = xstart; dx < xend; dx++)
+			{
+
+				dt = tstart + (dx - xstart) / c;                             //
+
+				CV_MAT_ELEM(*pmatRodan, float, tstart, tend) = CV_MAT_ELEM(*pmatRodan, float, tstart, tend)
+					+ CV_MAT_ELEM(*pmatDisplacement, float, dx, (int)dt);
+
+			}
+		}
+	}
+
+
+	*ppmatRodan = pmatRodan;
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+//拉东分段计算
+void  CudaMain::RadonProcess2(CvPoint &s, CvPoint &e, ConfigParam*config, const CvRect &sub_rc, const CvMat &matStrain)
+{
+
+	int  radon_num = config->radon_num;                    // 3
+	 
+
+	int  radon_step = config->radon_step;                  // 20
+
+
+
+	int  intpl_multiple = 1;                               // 插值处理后再做拉东变换   
+
+
+
+	std::vector<RadonParam> array_params;
+
+
+
+	for (int i = 0; i < radon_num; i++)                      //3
+	{
+
+
+		RadonParam param;
+
+		param.rc.x = sub_rc.x;
+
+		param.rc.y = sub_rc.y + i*radon_step;
+
+		param.rc.width = sub_rc.width;
+
+		param.rc.height = sub_rc.height;
+
+
+		CvMat *pmatSub = cvCreateMatHeader(param.rc.height-1, param.rc.width-1, matStrain.type);
+
+
+		cvGetSubRect(&matStrain, pmatSub, cvRect(param.rc.x, param.rc.y, param.rc.width-1, param.rc.height-1));
+
+
+		CvMat *pmatRadon = 0;
+
+
+		CvMat *pmatMultiple = cvCreateMat(pmatSub->rows, pmatSub->cols * intpl_multiple, pmatSub->type);
+
+
+		cvResize(pmatSub, pmatMultiple);
+
+
+		RadonSum(pmatMultiple, &pmatRadon);
+
+
+		double  min_val;
+
+
+		double  max_val;
+
+
+		CvPoint min_loc;
+
+
+		CvPoint max_loc;
+
+
+		cvMinMaxLoc(pmatRadon, &min_val, &max_val, &min_loc, &max_loc);
+
+
+		param.pt = max_loc;
+
+
+		param.xWidth = param.pt.y - param.pt.x;//add by wxm
+
+
+		array_params.push_back(param);
+
+
+		cvReleaseMat(&pmatRadon);
+
+
+		cvReleaseMat(&pmatMultiple);
+
+
+		cvReleaseMatHeader(&pmatSub);
+
+
+	}
+
+
+	std::sort(array_params.begin(), array_params.end(), MyLessThan2());
+
+
+
+	if (config->calc_type.compare("middle") == 0)
+	{
+
+		int size = array_params.size();
+
+
+		s.x = array_params[size / 2].pt.y / intpl_multiple;
+
+
+		s.y = array_params[size / 2].rc.y;
+
+
+		e.x = array_params[size / 2].pt.x / intpl_multiple;
+
+
+		e.y = array_params[size / 2].rc.y + array_params[size / 2].rc.height-1;
+
+	}
+
+	else if (config->calc_type.compare("max") == 0)
+	{
+
+		int size = array_params.size();
+
+		s.x = array_params[0].pt.y / intpl_multiple;
+
+		s.y = array_params[0].rc.y;
+
+
+		e.x = array_params[0].pt.x / intpl_multiple;
+
+		e.y = array_params[0].rc.y + array_params[0].rc.height-1;
+
+	}
+
+	else if (config->calc_type.compare("min") == 0)
+
+	{
+
+		int size = array_params.size();
+
+		s.x = array_params[size - 1].pt.y / intpl_multiple;
+
+		s.y = array_params[size - 1].rc.y;
+
+
+		e.x = array_params[size - 1].pt.x / intpl_multiple;
+
+		e.y = array_params[size - 1].rc.y + array_params[size - 1].rc.height-1;
+
+	}
+
+	else
+	{
+		//
+
+	}
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+//拉东变换&求剪切波&弹性模量
+
+void    CudaMain::random_proess_cuda(CvMat*fitMat, ConfigParam*config, EOutput &output)  {
+
+	
+	
+
+		int    win_size          = config->windowHW;                                              //  窗口大小
+
+
+		double overlap           = (config->windowHW - config->step) / (float)config->windowHW;  //   重合率，90%
+
+		double sound_velocity    = config->acousVel;                                             //   声波速度
+
+
+		double sample_frq        = config->sampleFreqs;                                         //    采样率                      
+
+		double prf               = 1 / 300e-6;                                                  //    重复率
+
+
+		int    dep_start         = (config->sb_x < 0) ? 0 : config->sb_x;
+
+		int    dep_size          = (config->sb_w < 0) ? fitMat->width : config->sb_w;
+
+		int    dep_end           = dep_start + dep_size - 1;
+
+		int    t_start           = (config->sb_y < 0) ? 0 : config->sb_y;
+
+		int    t_size            = (config->sb_h < 0) ? fitMat->rows : config->sb_h;
+
+		int    t_end             = t_start + t_size - 1;
+
+
+		CvMat *pmatStrainTran    = cvCreateMat(fitMat->cols, fitMat->rows, fitMat->type);       // 把strainMat转置      795*299
+
+
+		cvTranspose(fitMat, pmatStrainTran);
+
+
+		CvPoint                   start;
+
+		CvPoint                    end;
+		
+		CvRect                     rect;
+
+
+		rect.x                    = t_start;
+
+		rect.y                    = dep_start;
+
+		rect.width                = t_size;
+
+		rect.height               = dep_size;
+
+
+//		rect.left                = t_start;
+
+//		rect.right               = t_end;
+
+//		rect.top                 = dep_start;
+
+//		rect.bottom              = dep_end;
+
+		
+#if 1
+		RadonProcess2(start, end, config ,rect, *pmatStrainTran);
+#endif
+
+
+
+
+
+
+		double v                  = ((end.y - start.y) * win_size * (1 - overlap) * sound_velocity / sample_frq / 2)
+			/ ((end.x - start.x) / prf);
+
+
+
+		double e                  = v * v * 3;
+
+
+		output.v                  = (float)v;
+
+
+		output.e                  = (float)e;
+
+		cvReleaseMat(&pmatStrainTran);
+
+
+		
+    // 绘制斜线    有点问题   changed  by  wong    2016/07/08
+
+		/*
+		IplImage *strImage = cvCreateImage(cvSize(fitMat->cols, fitMat->rows), IPL_DEPTH_32F, 1);     //用于显示应变, 相对于outDataMat做了转置,行列颠倒.
+
+
+		for (int i = 0; i < strImage->width; i++) {
+
+			for (int j = 0; j < strImage->height; j++)	{
+
+
+				float*	tmp = static_cast<float*>(static_cast<void*>(strImage->imageData + j * strImage->widthStep + sizeof(float) * i));  //取应变图像对应位置
+
+
+				*tmp = 100 * CV_MAT_ELEM(*fitMat, float, i, j);
+
+			}
+
+		}
+
+
+		    char* filename = "strain_gpu.bmp";
+
+
+			ImagePostProc(strImage, filename, start, end);
+
+
+			cvReleaseImage(&strImage);
+
+   */
+
+
+}
+
+
+
 
 
 
@@ -2234,7 +2959,7 @@ void  CudaMain::process(const EInput &input, EOutput& output) {
 
 
 
-	   bandpassFilt_1024_cuda(cpu_inputMat);                                                     //    带通滤波       
+	   bandpassFilt_1024_cuda(cpu_inputMat);                                                     // 带通滤波       
 
 
 	   int  multiWin    = 2;
@@ -2248,20 +2973,28 @@ void  CudaMain::process(const EInput &input, EOutput& output) {
 	    computeDisplacement_cuda(cpu_inputMat, multiWin, winSize, stepSize, cpu_disMat);       //  位移计算       
 	
 
-		lowpassFilt_799_cuda (cpu_disMat);                                                   //    低通滤波  
+		lowpassFilt_799_cuda (cpu_disMat);                                                    //    低通滤波  
 
 
-		int  size = 0;
-
-
-
+	
 
 
 
+		
+
+		strainCalculate_cuda(cpu_disMat,   cpu_fitMat);                                       //  直线拟合
 
 
 
-	   
+		
+
+
+		random_proess_cuda(cpu_fitMat, cpu_config, output);                                 //  拉动变换计算速度和杨氏模量
+
+
+
+
+		int   ss = 0;
 
 
 
@@ -2270,6 +3003,9 @@ void  CudaMain::process(const EInput &input, EOutput& output) {
 
 
 
+
+
+	
 
 
 }

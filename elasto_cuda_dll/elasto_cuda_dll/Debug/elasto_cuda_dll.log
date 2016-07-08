@@ -1,13 +1,13 @@
-﻿Build started 2016/6/24 10:41:07.
+﻿Build started 2016/7/8 16:02:29.
      1>Project "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\elasto_cuda_dll\elasto_cuda_dll.vcxproj" on node 2 (Rebuild target(s)).
      1>CudaClean:
-         cmd.exe /C "C:\Users\wong\AppData\Local\Temp\tmp23fa60b7062c4a7bbb5616d0d47774c4.cmd"
+         cmd.exe /C "C:\Users\wong\AppData\Local\Temp\tmp7cc7776f33334a07a70ca4843b6e6602.cmd"
          "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile   -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\cuda_main.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cuda_main.cu" -clean
          
          F:\elasto_cuda_dll_gpu\elasto_cuda_dll\elasto_cuda_dll>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile   -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\cuda_main.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cuda_main.cu" -clean 
          cuda_main.cu
        CudaClean:
-         cmd.exe /C "C:\Users\wong\AppData\Local\Temp\tmp6052142eed5d4cb78d01c83c5fe0ec3a.cmd"
+         cmd.exe /C "C:\Users\wong\AppData\Local\Temp\tmp760af65aa5e143f7a65c235ce998e7d0.cmd"
          "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile   -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\devMatchCuda.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\devMatchCuda.cu" -clean
          
          F:\elasto_cuda_dll_gpu\elasto_cuda_dll\elasto_cuda_dll>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile   -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\devMatchCuda.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\devMatchCuda.cu" -clean 
@@ -18,7 +18,7 @@
          D:\vs_2013\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /D_DEBUG /D_WINDOWS /DELASTO_CUDA_DLL_EXPORTS /D_WINDLL /D_MBCS /D_AFXDLL /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" /I. /FIcuda_runtime.h /c F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\devMatchCuda.cu 
        CudaBuild:
          Compiling CUDA source file ..\src\cuda_main.cu...
-         cmd.exe /C "C:\Users\wong\AppData\Local\Temp\tmpb24410576cad445f8a28c482ee4d6bb0.cmd"
+         cmd.exe /C "C:\Users\wong\AppData\Local\Temp\tmp7de2c2880ba44935b9ac2081c4969076.cmd"
          "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\cuda_main.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cuda_main.cu"
          
          F:\elasto_cuda_dll_gpu\elasto_cuda_dll\elasto_cuda_dll>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\cuda_main.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\cuda_main.cu" 
@@ -52,17 +52,23 @@
      1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>F:\opencv_2.4.9\build\include\opencv2/core/types_c.h(320): warning : variable "t" is used before its value is set
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(581): warning : variable "bid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(583): warning : variable "tid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(888): warning : variable "tid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(919): warning : variable "bid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(952): warning : variable "bid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(954): warning : variable "tid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(984): warning : variable "tid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1309): warning : variable "maxLag" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1314): warning : variable "interpnum" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1571): warning : variable "maxLag" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2254): warning : variable "size" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(586): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(588): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(893): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(895): warning : variable "offrow" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(897): warning : variable "nextoff" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(961): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(994): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(996): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1026): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1351): warning : variable "maxLag" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1356): warning : variable "interpnum" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1628): warning : variable "maxLag" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2379): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2381): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2838): warning : variable "dep_end" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2844): warning : variable "t_end" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2997): warning : variable "ss" was declared but never referenced
      1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
@@ -143,17 +149,23 @@
      1>F:\opencv_2.4.9\build\include\opencv2/flann/flann.hpp(362): warning : missing return statement at end of non-void function "cv::flann::Index_<T>::radiusSearch(const std::vector<cv::flann::Index_<T>::ElementType, std::allocator<cv::flann::Index_<T>::ElementType>> &, std::vector<int, std::allocator<int>> &, std::vector<cv::flann::Index_<T>::DistanceType, std::allocator<cv::flann::Index_<T>::DistanceType>> &, cv::flann::Index_<T>::DistanceType, const cvflann::SearchParams &)"
      1>F:\opencv_2.4.9\build\include\opencv2/flann/flann.hpp(381): warning : missing return statement at end of non-void function "cv::flann::Index_<T>::radiusSearch(const cv::Mat &, cv::Mat &, cv::Mat &, cv::flann::Index_<T>::DistanceType, const cvflann::SearchParams &)"
      1>F:\opencv_2.4.9\build\include\opencv2/flann/flann.hpp(421): warning : missing return statement at end of non-void function "cv::flann::hierarchicalClustering<ELEM_TYPE,DIST_TYPE>(const cv::Mat &, cv::Mat &, const cvflann::KMeansIndexParams &)"
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(581): warning : variable "bid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(583): warning : variable "tid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(888): warning : variable "tid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(919): warning : variable "bid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(952): warning : variable "bid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(954): warning : variable "tid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(984): warning : variable "tid" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1309): warning : variable "maxLag" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1314): warning : variable "interpnum" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1571): warning : variable "maxLag" was declared but never referenced
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2254): warning : variable "size" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(586): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(588): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(893): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(895): warning : variable "offrow" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(897): warning : variable "nextoff" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(961): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(994): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(996): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1026): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1351): warning : variable "maxLag" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1356): warning : variable "interpnum" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1628): warning : variable "maxLag" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2379): warning : variable "bid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2381): warning : variable "tid" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2838): warning : variable "dep_end" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2844): warning : variable "t_end" was declared but never referenced
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2997): warning : variable "ss" was declared but never referenced
      1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(859): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(1807): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
@@ -165,12 +177,14 @@
      1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(7195): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
      1>c:\program files\nvidia gpu computing toolkit\cuda\v7.5\include\math_functions.h(8066): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
          cuda_main.cu
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1318): warning C4018: '>' : signed/unsigned mismatch
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1323): warning C4018: '>' : signed/unsigned mismatch
-     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1328): warning C4018: '>' : signed/unsigned mismatch
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1360): warning C4018: '>' : signed/unsigned mismatch
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1365): warning C4018: '>' : signed/unsigned mismatch
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(1370): warning C4018: '>' : signed/unsigned mismatch
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2459): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>F:/elasto_cuda_dll_gpu/elasto_cuda_dll/src/cuda_main.cu(2718): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
        CudaBuild:
          Compiling CUDA source file ..\src\devMatchCuda.cu...
-         cmd.exe /C "C:\Users\wong\AppData\Local\Temp\tmp9fdd86b2005b41bca1c2f8112b2e253b.cmd"
+         cmd.exe /C "C:\Users\wong\AppData\Local\Temp\tmpdcaf6e4e6198431e85f5796e85b4caf4.cmd"
          "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\devMatchCuda.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\devMatchCuda.cu"
          
          F:\elasto_cuda_dll_gpu\elasto_cuda_dll\elasto_cuda_dll>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2013 -ccbin "D:\vs_2013\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include"  -G -lineinfo  --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_WINDOWS -DELASTO_CUDA_DLL_EXPORTS -D_WINDLL -D_MBCS -D_AFXDLL -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd " -o Debug\devMatchCuda.cu.obj "F:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\devMatchCuda.cu" 
@@ -358,4 +372,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:37.30
+Time Elapsed 00:00:30.40

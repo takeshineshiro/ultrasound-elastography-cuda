@@ -477,11 +477,8 @@ F:\opencv_2.4.9\build\include\opencv2/core/operations.hpp
 F:\opencv_2.4.9\build\include\opencv2/core/mat.hpp
 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\cuda_runtime.h
 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\device_launch_parameters.h
-f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\SysConfig.h
-f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\CElasto.h
-D:\vs_2013\VC\include\iostream
-f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\FileUtility.h
-F:\opencv_2.4.9\build\include\opencv/cv.h
+f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\ImageFunc.h
+F:\opencv_2.4.9\build\include\opencv\cv.h
 F:\opencv_2.4.9\build\include\opencv2/imgproc/imgproc_c.h
 F:\opencv_2.4.9\build\include\opencv2/imgproc/types_c.h
 F:\opencv_2.4.9\build\include\opencv2/imgproc/imgproc.hpp
@@ -502,6 +499,7 @@ D:\vs_2013\VC\include\crtdefs.h
 f:\opencv_2.4.9\build\include\opencv2\flann\matrix.h
 f:\opencv_2.4.9\build\include\opencv2\flann\params.h
 f:\opencv_2.4.9\build\include\opencv2\flann\any.h
+D:\vs_2013\VC\include\iostream
 f:\opencv_2.4.9\build\include\opencv2\flann\saving.h
 f:\opencv_2.4.9\build\include\opencv2\flann\nn_index.h
 f:\opencv_2.4.9\build\include\opencv2\flann\result_set.h
@@ -557,8 +555,14 @@ D:\vs_2013\VC\include\deque
 F:\opencv_2.4.9\build\include\opencv2/legacy/compat.hpp
 D:\vs_2013\VC\include\math.h
 F:\opencv_2.4.9\build\include\opencv2/core/internal.hpp
+f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\SysConfig.h
+f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\CElasto.h
+f:\elasto_cuda_dll_gpu\elasto_cuda_dll\src\FileUtility.h
 D:\vs_2013\VC\include\fstream
 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\device_launch_parameters.h
 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\device_functions.h
 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v7.5\include\math_functions.h
 D:\vs_2013\VC\include\math.h
+F:\opencv_2.4.9\build\include\opencv/highgui.h
+F:\opencv_2.4.9\build\include\opencv2/highgui/highgui_c.h
+F:\opencv_2.4.9\build\include\opencv2/highgui/highgui.hpp

@@ -203,10 +203,14 @@ int _tmain(int argc, _TCHAR* argv[])
 
 				testCuda->process(in, out);
 			
-			
-			
+			    
+				printf("\tE=%fkPa,V=%fm/s\n", out.e, out.v);
+
+
+				break;
 			
 			}
+
 
 
 		case 'q':
