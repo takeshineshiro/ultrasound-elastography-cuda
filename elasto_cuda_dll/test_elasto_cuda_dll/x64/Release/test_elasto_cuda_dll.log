@@ -1,0 +1,14 @@
+﻿  stdafx.cpp
+  test_elasto_cuda_dll.cpp
+test_elasto_cuda_dll.cpp(19): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          D:\vs_2013\VC\include\stdio.h(211) : see declaration of 'fopen'
+test_elasto_cuda_dll.cpp(32): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          D:\vs_2013\VC\include\stdio.h(230) : see declaration of 'fscanf'
+test_elasto_cuda_dll.cpp(34): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+test_elasto_cuda_dll.cpp(48): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          D:\vs_2013\VC\include\stdio.h(211) : see declaration of 'fopen'
+test_elasto_cuda_dll.cpp(61): warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+     Creating library E:\elasto_cuda_dll_gpu_debug\elasto_cuda_dll\x64\Release\test_elasto_cuda_dll.lib and object E:\elasto_cuda_dll_gpu_debug\elasto_cuda_dll\x64\Release\test_elasto_cuda_dll.exp
+  Generating code
+  Finished generating code
+  test_elasto_cuda_dll.vcxproj -> E:\elasto_cuda_dll_gpu_debug\elasto_cuda_dll\x64\Release\test_elasto_cuda_dll.exe

@@ -198,13 +198,34 @@ int _tmain(int argc, _TCHAR* argv[])
 
 			else  {                                      //gpu  platform 
 
-				ElastoCuda * testCuda = new ElastoCuda();
+				ElastoCuda * testCuda = new  ElastoCuda();
 
+				start = ::clock();
+
+			//	testCuda->init();
+
+			//	finish = ::clock();
+
+			//	total = (double)(finish - start) / CLOCKS_PER_SEC;
+
+			//	printf("\ninitialTime is %fs!\n", total);
+
+				start = ::clock();
 
 				testCuda->process(in, out);
-			
-			    
-				printf("\tE=%fkPa,V=%fm/s\n", out.e, out.v);
+
+				finish = ::clock();
+				total = (double)(finish - start) / CLOCKS_PER_SEC;
+
+
+				printf("author:wong  email:takeshineshiro@126.com\n");
+
+				printf("\nTotalTime is %fs!\n", total);
+
+				printf("E=%fkPa\n", out.e);
+
+				printf("V=%fm/s\n", out.v);
+
 
 
 				break;

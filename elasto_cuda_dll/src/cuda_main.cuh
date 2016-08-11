@@ -8,7 +8,6 @@
 
 #include <device_launch_parameters.h>
 
-//#include "SysConfig.h"
 
 #include "ImageFunc.h"
 
@@ -75,48 +74,34 @@ typedef   struct     resultData  {
 
 typedef  struct  templateMat{
 
-//	Complex  elem[64];
-
-//	Complex  atom[36];
 
 
 	templateData  tempData;
 
 
 
-}  templateMat;                                         //changed   by   wong    2016/5/19
+}  templateMat;                                         
 
 
 
 
 typedef  struct  objectMat{
 
- //	Complex  elem_0[64];
-
-//	Complex  elem_1[64];
-
-//	Complex  elem_2[64];
-
-//	Complex  atom[8];
+ 
 
  objectData    objData;
 
 
-}  objectMat;                                            //changed   by   wong    2016/5/19
+}  objectMat;                                            
 
 
 
 typedef  struct resultMat{
 
-//	Complex  elem[64];
-
-//	Complex  atom[37];
-
-
 	resultData   resData;
 
 
-}  resultMat;                                         //changed   by   wong    2016/5/19
+}  resultMat;                                         
 
 
 
@@ -160,7 +145,6 @@ class   CudaMain  {
 
 private:
 
-//cpu内存分配
 
 	CvMat*    cpu_inputMat;                      // 输入数据存放矩阵；
 
@@ -189,15 +173,12 @@ private:
 
 
 
-	bool               mallocFlag;            // 内存分配完毕
+	bool                mallocFlag;            // 内存分配完毕
 
 	ConfigParam*        cpu_config;           // 配置参数
 
 
 
-
-
-//gpu内存分配
 
 	Complex* inputMat;                       // 输入矩阵在GPU分配                         
 
@@ -216,16 +197,6 @@ private:
 
 
 	Complex* disOutput;                    //  位移矩阵在GPU分配
-
-
-//	templateMat*templateMatShare;             //   模板内存在GPU分配         
-
-
-//	objectMat* objectMatShare;             //    目标内存在GPU分配         
-
-
-//	resultMat*resultMatShare;              //    匹配结果在GPU分配        
-
 
 
 	Complex*singularOutputCuda;            // 去奇异
@@ -248,8 +219,7 @@ private:
 
 
 	Complex*   fit_IN;                         // 应变输入
-
-//	Complex*   xx_IN;                               
+                           
 
 	Complex*   fit_Out;                       //  应变输出
 
@@ -280,30 +250,30 @@ private:                                                                       /
 
 
 
- virtual	CvMat* bandpassFilt_cuda(CvMat* rawMat);                      //计算零相移滤波（带通），输出矩阵为了便于画图，保存，比较结果
+ virtual	CvMat* bandpassFilt_cuda(CvMat* rawMat);                     
 
 
 
 
- virtual    CvMat* bandpassFilt_1024_cuda(CvMat* rawMat);               //计算零相移滤波（带通）1024线程，输出矩阵为了便于画图，保存，比较结果       
+ virtual    CvMat* bandpassFilt_1024_cuda(CvMat* rawMat);                 
 
 
 
- virtual    void   zeroFilter_cuda(CvMat* rawMat,Complex*filterOutput);   //计算零相移滤波（带通或低通）,输出保留在GPU中
+ virtual    void   zeroFilter_cuda(CvMat* rawMat,Complex*filterOutput);   
 
 
-	                                                                     // 计算一维位移矩阵，输出矩阵为了便于画图，保存，比较结果            
+	                                                                                
  virtual  void computeDisplacement_cuda(CvMat* inputMat, int  multiWin, int winSize, int stepSize, CvMat*outputMat);
 
 
-                                                                        // 计算一维位移矩阵，输出保留在GPU中
+                                                                       
   virtual  void  zeroDisplacement_cuda(CvMat* inputMat, int  multiWin, int winSize, int stepSize, Complex*disOutput);
 
 
 
 
 
-  virtual	CvMat* lowpassFilt_799_cuda(CvMat* disMat);                 //计算零相移滤波（低通），输出矩阵为了便于画图，保存，比较结果
+  virtual	CvMat* lowpassFilt_799_cuda(CvMat* disMat);                 
 
 
 
@@ -325,7 +295,7 @@ private:                                                                       /
 
 
 
-public:                                  //共有函数
+public:                                  
 
 
 

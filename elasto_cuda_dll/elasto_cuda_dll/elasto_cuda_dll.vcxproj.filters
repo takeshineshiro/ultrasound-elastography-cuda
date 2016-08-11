@@ -117,15 +117,15 @@
     <ClCompile Include="..\src\elasto_cuda.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\devMatchCuda.cuh" />
-    <ClCompile Include="..\src\cuda_main.cuh">
-      <Filter>Header Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="..\src\devMatchCuda.cu" />
     <CudaCompile Include="..\src\cuda_main.cu">
       <Filter>Source Files</Filter>
     </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\cuda_main.cuh" />
+    <None Include="..\src\devMatchCuda.cuh" />
   </ItemGroup>
 </Project>
